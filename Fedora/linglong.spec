@@ -5,7 +5,7 @@ Release:        1
 Summary:        Linglong Package FrameWork
 License:        LGPLv3
 URL:            https://github.com/linuxdeepin/%{name}
-Source0:        linyaps.tar.gz
+Source0:        linyaps.zip
 
 BuildRequires:  cmake gcc-c++
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
