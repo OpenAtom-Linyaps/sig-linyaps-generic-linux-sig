@@ -32,7 +32,7 @@
 
 ### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑源代码
 
-#### `cd SOURCES && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong.spec && cd ..`
+#### `cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/heads/release/1.7.x.zip && cd ..`
 
 ### 3.在rpmbuild/SPECS目录下载本仓库的spec文件
 
