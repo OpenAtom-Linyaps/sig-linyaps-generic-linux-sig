@@ -17,13 +17,14 @@ BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils erofs-fuse
 Requires:       glib2 shared-mime-info erofs-utils
+Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
 This package is a linglong package framework.
 
 %package        -n linglong-bin
 Summary:        Linglong package manager
-Requires:       linglong-box = %{version}-%{release}
+Requires:       linglong-box = %{version}-%{release} google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts    
 %description    -n linglong-bin
 Linglong package management command line tool.
 
