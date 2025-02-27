@@ -15,7 +15,7 @@ BuildRequires:  glibc-static libstdc++-static
 BuildRequires:  libcurl-devel openssl-devel libcap-devel
 BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
-Requires:       desktop-file-utils erofsfuse
+Requires:       desktop-file-utils erofs-fuse
 Requires:       glib2 shared-mime-info erofs-utils
 
 %description
@@ -35,7 +35,7 @@ This package is a tool that makes it easy to build applications and dependencies
 
 %package        -n linglong-box
 Summary:        Linglong sandbox
-Requires:       desktop-file-utils erofsfuse
+Requires:       desktop-file-utils erofs-fuse
 Requires:       glib2 shared-mime-info erofs-utils
 %description    -n linglong-box
 Linglong sandbox with OCI standard.
