@@ -106,7 +106,7 @@ cd build
 %{_datadir}/%{name}/config.yaml
 %{_datadir}/mime/packages/*
 %{_datadir}/locale/*
-/usr/share/zsh/vendor-completions/_ll-cli
+/usr/share/zsh/*
 
 %files -n linglong-builder
 %license LICENSE
