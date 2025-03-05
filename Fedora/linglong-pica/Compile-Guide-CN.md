@@ -2,7 +2,21 @@
 
 ## 目标玲珑-Pica编译版本:上游Master
 
-#### 注意:不建议在docker下进行编译,因为USER变量缺失,而且使用wget下载会大概率出问题,除非您有能力进行对应的更改
+#### 注意:
+
+#### 1.不建议在docker下进行编译,因为USER变量缺失,而且使用wget下载会大概率出问题,除非您有能力进行对应的更改
+
+#### 2.Fedora下无法转换DEB包为玲珑包,只能转换AppImage和Flatpak版
+
+
+
+
+
+
+
+# 手动编译教程:
+
+## (手动编译情况适用于需要自行修改源码场景)
 
 ## 一.准备环境
 
@@ -30,7 +44,7 @@
 
 ### 3.在rpmbuild/SPECS目录下载本仓库的spec文件
 
-#### `cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong.spec && cd ..`
+#### `cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong-pica/linglong-pica.spec && cd ..`
 
 ## 三.安装构建依赖
 

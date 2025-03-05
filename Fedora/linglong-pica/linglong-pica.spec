@@ -13,7 +13,7 @@ Requires:grep jq ostree python3 python3-pyyaml
 Requires:flatpak coreutils zstd
 
 %description
-Linglong transform package tools to transform package to linyaps command line tool from deb,AppImage,Flatpak,etc.
+Linglong transform package tools to transform package to linyaps command line tool from AppImage and Flatpak.
 
 %prep
 %autosetup -p1 -n linglong-pica-master
