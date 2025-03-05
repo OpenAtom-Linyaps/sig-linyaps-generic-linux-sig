@@ -2,7 +2,7 @@
 Name:           linglong
 Version:        1.7.8
 Release:        1
-Summary:        Linglong Package FrameWork
+Summary:        Linglong is a Package Manager on Linux.
 License:        LGPLv3
 URL:            https://github.com/linuxdeepin/%{name}
 Source0:        linyaps.zip
