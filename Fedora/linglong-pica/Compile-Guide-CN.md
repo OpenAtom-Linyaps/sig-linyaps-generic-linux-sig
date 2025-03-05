@@ -8,11 +8,15 @@
 
 #### 2.Fedora下无法转换DEB包为玲珑包,只能转换AppImage和Flatpak版
 
+# 自动编译教程:
 
+## (自动编译适用于代码编译无问题并希望及时跟随上游的场景)
 
+#### 在一个干净的文件夹里直接执行:
 
+#### `wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong-pica/build-rpm.sh && bash build-rpm.sh`
 
-
+### 如果没有编译问题就会在当前文件夹下生成RPM安装包 (编译环境也会同时清理掉)
 
 # 手动编译教程:
 
