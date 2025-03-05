@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "- 请在下方输入您的当前用户密码"
+sudo echo "- 提权成功!"
+clear
 #先获取当前目录
 current_dir=${PWD}
 
@@ -25,11 +28,11 @@ cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-
 
 echo "- 正在安装编译依赖"
 #进入SPEC文件所在文件夹并安装编译依赖
-cd SPECS && sudo dnf builddep linglong.spec -y
+cd SPECS && sudo dnf builddep linglong-pica.spec -y
 
 echo "- 开始编译"
 #开始编译
-rpmbuild -bb linglong.spec
+rpmbuild -bb linglong-pica.spec
 
 echo "- 正在拷贝RPM安装包"
 #拷贝RPM安装包到当前目录
@@ -38,3 +41,5 @@ cp ~/rpmbuild/RPMS/*/* ${current_dir}
 echo "- 清理编译目录"
 #清理工作目录
 sudo rm -r ~/rpmbuild
+
+echo "- 玲珑-Pica的RPM安装包构建完成!"
