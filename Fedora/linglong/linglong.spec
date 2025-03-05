@@ -20,7 +20,7 @@ Requires:       glib2 shared-mime-info erofs-utils
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
-Linyaps is a secondary package manager on Linux.It could run apps on linyaps on Linux.
+Linyaps is a secondary package manager on Linux.It could run apps with a stable container on Linux.
 
 %package        -n linglong-bin
 Summary:        Linglong package manager
