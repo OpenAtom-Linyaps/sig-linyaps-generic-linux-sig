@@ -1,6 +1,6 @@
 # Fedora (RPM系编译指导)
 
-## 目标玲珑编译版本:1.7.8-1
+## 目标玲珑-Pica编译版本:上游Master
 
 #### 注意:不建议在docker下进行编译,因为USER变量缺失,而且使用wget下载会大概率出问题,除非您有能力进行对应的更改
 
@@ -26,7 +26,7 @@
 
 ### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑源代码
 
-#### `cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.7.8-1.zip && cd ..`
+#### `cd SOURCES && wget -O linglong-pica.zip https://github.com/linuxdeepin/linglong-pica/archive/refs/heads/master.zip && cd ..`
 
 ### 3.在rpmbuild/SPECS目录下载本仓库的spec文件
 

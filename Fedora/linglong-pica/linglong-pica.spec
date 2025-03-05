@@ -16,7 +16,7 @@ Requires:flatpak coreutils zstd
 Linglong transform package tools to transform package to linyaps command line tool from deb,AppImage,Flatpak,etc.
 
 %prep
-%autosetup -p1 -n linglong-pica
+%autosetup -p1 -n linglong-pica-master
 %define _debugsource_template %{nil}
 
 %build
@@ -30,6 +30,9 @@ make build
 %attr(755,root,root) /usr/libexec/*
 
 %changelog
+* Wed Mar 5 2025 LFRon <ronforever@qq.com> - 1.2.4-2
+- Bump version to follow upstream update to 1.2.4-2
+
 * Thu Feb 27 2025 LFRon <ronforever@qq.com> - 1.2.4-1
 - Initial support for Fedora
 - Bump version to 1.2.4-1
