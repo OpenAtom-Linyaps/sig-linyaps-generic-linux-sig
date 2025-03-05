@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.7.5
+Version:        1.7.8
 Release:        1
 Summary:        Linglong Package FrameWork
 License:        LGPLv3
@@ -20,7 +20,7 @@ Requires:       glib2 shared-mime-info erofs-utils
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
-This package is a linglong package framework.
+Linyaps is a secondary package framework on Linux.
 
 %package        -n linglong-bin
 Summary:        Linglong package manager
@@ -42,7 +42,7 @@ Requires:       glib2 shared-mime-info erofs-utils
 Linglong sandbox with OCI standard.
 
 %prep
-%autosetup -p1 -n linyaps
+%autosetup -p1 -n linyaps-%{version}-1
 
 %define _debugsource_template %{nil}
 
@@ -106,6 +106,7 @@ cd build
 %{_datadir}/%{name}/config.yaml
 %{_datadir}/mime/packages/*
 %{_datadir}/locale/*
+/usr/share/zsh/vendor-completions/_ll-cli
 
 %files -n linglong-builder
 %license LICENSE
@@ -118,11 +119,17 @@ cd build
 %{_libexecdir}/%{name}/builder/helper/*.sh
 %{_datadir}/bash-completion/completions/ll-builder
 %{_datadir}/%{name}/builder/templates/*.yaml
+/usr/share/linglong/builder/uab/*
 
 %files -n linglong-box
 %license LICENSE
 %{_bindir}/ll-box
 
 %changelog
+* Wed Mar 5 2025 chenhuixing <chenhuixing@deepin.org> - 1.7.8-1
+- Bump version to 1.7.8-1
+- Fix known bugs
+
 * Thu Apr 25 2024 chenhuixing <chenhuixing@deepin.org> - 1.7.5-1
 - Bump version to 1.7.5-1
+- Initial support for Fedora
