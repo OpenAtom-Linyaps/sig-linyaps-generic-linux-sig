@@ -2,7 +2,11 @@
 
 echo "- 请在下方输入您的当前用户密码"
 sudo echo "- 提权成功!"
+sleep 0.3
+echo "- 开始编译"
+sleep 0.5
 clear
+
 #先获取当前目录
 current_dir=${PWD}
 
