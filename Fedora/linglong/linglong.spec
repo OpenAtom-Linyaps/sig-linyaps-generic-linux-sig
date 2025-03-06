@@ -36,7 +36,7 @@ This package is a tool that makes it easy to build applications and dependencies
 
 %package        -n linglong-box
 Summary:        Linglong sandbox
-Requires:       desktop-file-utils erofs-fuse
+Requires:       desktop-file-utils erofs-fuse fuse-overlayfs
 Requires:       glib2 shared-mime-info erofs-utils
 %description    -n linglong-box
 Linglong sandbox with OCI standard.
@@ -126,6 +126,10 @@ cd build
 %{_bindir}/ll-box
 
 %changelog
+* Thu Mar 6 2025 chenhuixing <chenhuixing@deepin.org> - 1.7.8-2
+- Bump version to 1.7.8-2
+- fix missing environment variable
+
 * Wed Mar 5 2025 chenhuixing <chenhuixing@deepin.org> - 1.7.8-1
 - Bump version to 1.7.8-1
 - Fix known bugs
