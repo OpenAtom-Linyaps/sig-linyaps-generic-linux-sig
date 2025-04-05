@@ -9,8 +9,8 @@ clear
 #先获取当前目录
 current_dir=${PWD}
 
-#进入主目录
-cd ~
+#进入主目录并清理可能有的旧rpmbuild安装包
+cd ~ && rm -r rpmbuild
 
 #更新软件源并安装编译所需的基础依赖
 sudo dnf update && sudo dnf install @development-tools rpmdevtools rpmlint wget -y
