@@ -26,7 +26,7 @@
 
 ### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑源代码
 
-#### `cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.7.8-1.zip && cd ..`
+#### `cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.8.0-1.zip && cd ..`
 
 ### 3.在rpmbuild/SPECS目录下载本仓库的spec文件
 

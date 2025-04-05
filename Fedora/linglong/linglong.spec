@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.7.8
+Version:        1.8.0
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPLv3
@@ -107,6 +107,7 @@ cd build
 %{_datadir}/mime/packages/*
 %{_datadir}/locale/*
 /usr/share/zsh/*
+/usr/share/applications/*
 
 %files -n linglong-builder
 %license LICENSE
@@ -126,6 +127,26 @@ cd build
 %{_bindir}/ll-box
 
 %changelog
+* Sat Apr 5 2025 LFRon <ronforever@qq.com> - 1.8.0-1
+- Bump version to 1.8.0-1
+- fix: correct path deduplication while fixmount by @ComixHe in #1079
+- fix: adjust container mount items by @myml in #1085
+- fix: fix compiler error by @reddevillg in #1084
+- fix: skip whiteout files by @reddevillg in #1083
+- fix: fix unshare error by @reddevillg in #1082
+- fix: exporting systemd service may cause system error by @myml in #1081
+- fix: version comparison error by @ice909 in #1087
+- fix: ll-builder build failed by @ice909 in #1091
+- fix: failed to umount layer dir by @dengbo11 in #1088
+- feat: add share/templates dir to whitelist by @dengbo11 in #1090
+- chore: adjust the builder output format by @ice909 in #1095
+- fix: compatible with qt 5.11 by @ComixHe in #1094
+- feat: support don't export the develop module by @ice909 in #1097
+- feat: support Qt6 packaging by @dengbo11 in #1096
+
+* Fri Mar 28 2025 LFRon <ronforever@qq.com> - 1.7.11-1
+- Bump version to 1.7.11-1
+
 * Thu Mar 6 2025 chenhuixing <chenhuixing@deepin.org> - 1.7.8-2
 - Bump version to 1.7.8-2
 - fix missing environment variable
