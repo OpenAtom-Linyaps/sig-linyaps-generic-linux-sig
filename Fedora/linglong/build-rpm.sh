@@ -25,9 +25,8 @@ echo "- 正在下载源码"
 #下载最新源码压缩包
 cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.8.0-1.zip && cd ..
 
-echo "- 正在下载SPEC编译文件"
-#下载最新SPEC编译文件
-cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong/linglong.spec && cd ..
+echo "- 拷贝编译文件到SPECS"
+cd SPECS && cp ${current_dir}/linglong.spec ./
 
 echo "- 正在安装编译依赖"
 #进入SPEC文件所在文件夹并安装编译依赖
