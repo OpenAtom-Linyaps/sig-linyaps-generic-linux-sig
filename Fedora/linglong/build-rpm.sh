@@ -23,7 +23,7 @@ cd ~/rpmbuild
 
 echo "- 正在下载源码"
 #下载最新源码压缩包
-cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.8.1-1.zip && cd ..
+cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.8.3-1.zip && cd ..
 
 echo "- 正在下载SPEC编译文件"
 #下载最新SPEC编译文件

@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.8.1
+Version:        1.8.3
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPLv3
@@ -127,6 +127,9 @@ cd build
 %{_bindir}/ll-box
 
 %changelog
+* Fri May 16 2025 chenhuixing <chenhuixing@deepin.org> - 1.8.3-1
+- Follow the upstream version 1.8.3-1
+
 * Thu Apr 24 2025 chenhuixing <chenhuixing@deepin.org> - 1.8.1-1
 - Follow the upstream version 1.8.1-1
 
