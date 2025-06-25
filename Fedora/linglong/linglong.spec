@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.8.0
+Version:        1.8.5
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPLv3
@@ -20,19 +20,19 @@ Requires:       glib2 shared-mime-info erofs-utils
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
-Linyaps is a secondary package manager on Linux.It could run apps with a stable container on Linux.
+Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container on Linux.
 
 %package        -n linglong-bin
 Summary:        Linglong package manager
 Requires:       linglong-box = %{version}-%{release} google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts    
 %description    -n linglong-bin
-Linglong package management command line tool.
+Linyaps package management command line tool.
 
 %package        -n linglong-builder
 Summary:        Linglong build tools
-Requires:       linglong-box = %{version}-%{release} linglong-bin = %{version}-%{release}
+Requires:       linglong-box = %{version}-%{release} linglong-bin = %{version}-%{release} git
 %description    -n linglong-builder
-This package is a tool that makes it easy to build applications and dependencies.
+This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %package        -n linglong-box
 Summary:        Linglong sandbox
@@ -127,6 +127,15 @@ cd build
 %{_bindir}/ll-box
 
 %changelog
+* Sat Jun 14 2025 chenhuixing <chenhuixing@deepin.org> - 1.8.5-1
+- Follow the upstream version 1.8.5-1
+
+* Fri May 16 2025 chenhuixing <chenhuixing@deepin.org> - 1.8.3-1
+- Follow the upstream version 1.8.3-1
+
+* Thu Apr 24 2025 chenhuixing <chenhuixing@deepin.org> - 1.8.1-1
+- Follow the upstream version 1.8.1-1
+
 * Sat Apr 5 2025 LFRon <ronforever@qq.com> - 1.8.0-1
 - Bump version to 1.8.0-1
 - fix: correct path deduplication while fixmount by @ComixHe in #1079
