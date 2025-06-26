@@ -23,18 +23,16 @@ cd ~/rpmbuild
 
 echo "- 正在下载源码"
 #下载最新源码压缩包
-cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.9.0-1.zip && cd ..
-
-echo "- 拷贝编译文件到SPECS"
-cd SPECS && cp ${current_dir}/linglong.spec ./
+cd SOURCES && wget -O linyaps-box.zip https://github.com/OpenAtom-Linyaps/linyaps-box/archive/refs/tags/2.0.0.zip && cd ..
 
 echo "- 正在安装编译依赖"
-#进入SPEC文件所在文件夹并安装编译依赖
-cd SPECS && sudo dnf builddep linglong.spec -y
+#安装编译依赖
+cd ${current_dir}
+sudo dnf builddep ./linglong-box.spec -y
 
 echo "- 开始编译"
 #开始编译
-rpmbuild -bb linglong.spec
+rpmbuild -bb ./linglong-box.spec 
 
 echo "- 正在拷贝RPM安装包"
 #拷贝RPM安装包到当前目录
@@ -42,6 +40,6 @@ cp ~/rpmbuild/RPMS/*/* ${current_dir}
 
 echo "- 清理编译目录"
 #清理工作目录
-sudo rm -r ~/rpmbuild
+rm -r ~/rpmbuild
 
 echo "- 玲珑本体RPM安装包构建完成!"
