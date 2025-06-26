@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.0
+Version:        1.9.1
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPLv3
@@ -24,25 +24,19 @@ Linyaps is a secondary package manager on Linux.It could run apps with stable an
 
 %package        -n linglong-bin
 Summary:        Linglong package manager
-Requires:       linglong-box = %{version}-%{release} google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts    
+Requires:       linglong-box >= 2.0.0-1  google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts    
 %description    -n linglong-bin
 Linyaps package management command line tool.
 
 %package        -n linglong-builder
 Summary:        Linglong build tools
-Requires:       linglong-box = %{version}-%{release} linglong-bin = %{version}-%{release} git
+Requires:       linglong-box >= 2.0.0-1 linglong-bin = %{version}-%{release} git
 %description    -n linglong-builder
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
-%package        -n linglong-box
-Summary:        Linglong sandbox
-Requires:       desktop-file-utils erofs-fuse fuse-overlayfs
-Requires:       glib2 shared-mime-info erofs-utils
-%description    -n linglong-box
-Linglong sandbox with OCI standard.
 
 %prep
-%autosetup -p1 -n linyaps-%{version}-1
+%autosetup -p1 -n linyaps-%{version}
 
 %define _debugsource_template %{nil}
 
@@ -75,7 +69,9 @@ cd build
 %files
 %doc README.md
 %license LICENSE
+%{_prefix}/libexec/linglong/dumb-init
 %exclude %{_libdir}/cmake/linglong-*/*.cmake
+%{_datadir}/linglong/export-dirs.json
 
 %files -n linglong-bin
 %doc README.md
@@ -122,9 +118,11 @@ cd build
 %{_datadir}/%{name}/builder/templates/*.yaml
 /usr/share/linglong/builder/uab/*
 
-%license LICENSE
 
 %changelog
+* Thu Jun 26 2025 chenchenjun <chenjiehai1024@gmail.com> - 1.9.1-1
+- Follow the upstream version 1.9.1-1
+
 * Wed Jun 25 2025 chenhuixing <chenhuixing@deepin.org> - 1.9.0-1
 - Follow the upstream version 1.9.0-1
 
