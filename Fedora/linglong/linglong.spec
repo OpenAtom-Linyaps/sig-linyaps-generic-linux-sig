@@ -72,8 +72,6 @@ cd build
 %exclude %{_libdir}/cmake/linglong-*/*.cmake
 
 %files -n linglong-bin
-%doc README.md
-%license LICENSE
 %{_sysconfdir}/profile.d/*
 %{_sysconfdir}/X11/Xsession.d/*
 %{_bindir}/ll-cli
@@ -107,7 +105,6 @@ cd build
 
 
 %files -n linglong-builder
-%license LICENSE
 %{_bindir}/ll-builder
 %{_libexecdir}/%{name}/fetch-dsc-source
 %{_libexecdir}/%{name}/fetch-git-source
