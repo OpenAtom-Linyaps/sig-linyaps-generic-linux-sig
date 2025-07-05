@@ -24,13 +24,13 @@ Linyaps is a secondary package manager on Linux.It could run apps with stable an
 
 %package        -n linglong-bin
 Summary:        Linglong package manager
-Requires:       linglong-box = %{version}-%{release} google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts    
+Requires:       linglong-box google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 %description    -n linglong-bin
 Linyaps package management command line tool.
 
 %package        -n linglong-builder
 Summary:        Linglong build tools
-Requires:       linglong-box = %{version}-%{release} linglong-bin = %{version}-%{release} git
+Requires:       linglong-box linglong-bin = %{version}-%{release} git
 %description    -n linglong-builder
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
