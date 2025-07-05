@@ -1,6 +1,6 @@
 # Fedora (RPM系编译指南)
 
-## 目标玲珑编译版本:1.9.0-1
+## 目标玲珑编译版本:1.9.4-1
 
 #### 注意:不建议在docker下进行编译,因为USER变量缺失,而且使用wget下载会大概率出问题,除非您有能力进行对应的更改
 
@@ -28,9 +28,10 @@
 
 `cd /home/${USER}/rpmbuild`
 
-### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑源代码
+### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑和玲珑-box的源代码
 
-`cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.9.0-1.zip && cd ..`
+`cd SOURCES && wget -O linyaps.zip https://github.com/OpenAtom-Linyaps/linyaps/archive/refs/tags/1.9.4.zip && cd ..`
+`cd SOURCES && wget -O linyaps-box.zip https://github.com/deepin-community/linyaps-box/archive/refs/heads/release/2.0.zip && cd ..`
 
 ### 3.在rpmbuild/SPECS目录下载本仓库的spec文件
 

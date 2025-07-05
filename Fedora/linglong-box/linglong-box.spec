@@ -8,10 +8,8 @@ URL:            https://github.com/OpenAtom-Linyaps/linyaps-box
 Source0:        linyaps-box.zip
 
 BuildRequires:  cmake gcc-c++ glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
-Requires:       linglong-bin >= 1.9.0
 Requires:       desktop-file-utils erofs-fuse
 Requires:       glib2 shared-mime-info erofs-utils
-Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
 Linglong sandbox with OCI standard.
