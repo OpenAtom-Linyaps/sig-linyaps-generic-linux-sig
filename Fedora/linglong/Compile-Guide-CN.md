@@ -10,6 +10,8 @@
 
 ## 二.手动编译教程
 
+## 1.构建玲珑-box (目标玲珑-box版本:2.0)
+
 ### 1.安装RPM编译所需依赖:
 
 `sudo dnf install @development-tools rpmdevtools rpmlint wget -y`
@@ -18,7 +20,41 @@
 
 `cd /home/${USER}`
 
-3.新建RPM包编译工作环境
+### 3.新建RPM包编译工作环境
+
+`rpmdev-setuptree`
+
+### 4.在rpmbuild/SOURCES目录下载.zip格式的玲珑-box的源代码
+
+`cd SOURCES && wget -O linyaps-box.zip https://github.com/deepin-community/linyaps-box/archive/refs/heads/release/2.0.zip && cd ..`
+
+### 5.在rpmbuild/SPECS目录下载本仓库的spec文件
+
+`cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong-box/linglong-box.spec && cd ..`
+
+### 6.进入rpmbuild/SPECS目录后使用dnf命令安装对应依赖即可
+
+`cd SPECS && sudo dnf builddep linglong-box.spec -y`
+
+### 7.进行构建并生成RPM包
+
+`rpmbuild -bb linglong-box.spec`
+
+#### 之后产生的RPM安装包就在`~/rpmbuild/RPMS/<对应架构>`下,将其全部导出并进行分发即可
+
+
+
+## 2.构建玲珑本体
+
+### 1.安装RPM编译所需依赖:
+
+`sudo dnf install @development-tools rpmdevtools rpmlint wget -y`
+
+### 2.进入到对应用户的"~"文件夹,也就是
+
+`cd /home/${USER}`
+
+### 3.新建RPM包编译工作环境
 
 `rpmdev-setuptree`
 
@@ -28,16 +64,15 @@
 
 `cd /home/${USER}/rpmbuild`
 
-### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑和玲珑-box的源代码
+### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑的源代码
 
-`cd SOURCES && wget -O linyaps.zip https://github.com/OpenAtom-Linyaps/linyaps/archive/refs/tags/1.9.4.zip && cd ..`
-`cd SOURCES && wget -O linyaps-box.zip https://github.com/deepin-community/linyaps-box/archive/refs/heads/release/2.0.zip && cd ..`
+`cd SOURCES && wget -O linyaps.zip https://gitee.com/LFRon/Linyaps-generic-linux-SIG/releases/download/1.9.4-1/linyaps-1.9.4-source.zip && cd ..`
 
 ### 3.在rpmbuild/SPECS目录下载本仓库的spec文件
 
 `cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong.spec && cd ..`
 
-## 三.安装构建依赖
+## 三.安装构建玲珑
 
 ### 进入rpmbuild/SPECS目录后使用dnf命令安装对应依赖即可
 

@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.0
+Version:        1.9.4
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPLv3
@@ -34,13 +34,6 @@ Requires:       linglong-box = %{version}-%{release} linglong-bin = %{version}-%
 %description    -n linglong-builder
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
-%package        -n linglong-box
-Summary:        Linglong sandbox
-Requires:       desktop-file-utils erofs-fuse fuse-overlayfs
-Requires:       glib2 shared-mime-info erofs-utils
-%description    -n linglong-box
-Linglong sandbox with OCI standard.
-
 %prep
 %autosetup -p1 -n linyaps-%{version}-1
 
@@ -56,6 +49,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DSYSCONF_INSTALL_DIR:PATH=%{_sysconfdir} \
       -DSHARE_INSTALL_PREFIX:PATH=%{_datadir} \
       -DBUILD_SHARED_LIBS=OFF \
+      -DQT_VERSION_MAJOR=5 \
       -DCPM_LOCAL_PACKAGES_ONLY=ON ..
 %make_build
 
@@ -125,6 +119,9 @@ cd build
 %license LICENSE
 
 %changelog
+* Sat Jul 5 2025 chenhuixing <chenhuixing@deepin.org> - 1.9.4-1
+- Follow the upstream version 1.9.4-1
+
 * Wed Jun 25 2025 chenhuixing <chenhuixing@deepin.org> - 1.9.0-1
 - Follow the upstream version 1.9.0-1
 

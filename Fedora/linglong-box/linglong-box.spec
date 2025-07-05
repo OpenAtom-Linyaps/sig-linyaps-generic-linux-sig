@@ -7,7 +7,7 @@ License:        LGPLv3
 URL:            https://github.com/OpenAtom-Linyaps/linyaps-box
 Source0:        linyaps-box.zip
 
-BuildRequires:  cmake gcc-c++ glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
+BuildRequires:  cmake gcc-c++ glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel hello erofs-fuse
 Requires:       desktop-file-utils erofs-fuse
 Requires:       glib2 shared-mime-info erofs-utils
 
