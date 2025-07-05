@@ -24,9 +24,9 @@
 
 `rpmdev-setuptree`
 
-### 4.在rpmbuild/SOURCES目录下载.zip格式的玲珑-box的源代码
+### 4.进入rpmbuild目录,并在rpmbuild/SOURCES目录下载.zip格式的玲珑-box的源代码
 
-`cd SOURCES && wget -O linyaps-box.zip https://github.com/deepin-community/linyaps-box/archive/refs/heads/release/2.0.zip && cd ..`
+`cd rpmbuild/SOURCES && wget -O linyaps-box.zip https://github.com/deepin-community/linyaps-box/archive/refs/heads/release/2.0.zip && cd ..`
 
 ### 5.在rpmbuild/SPECS目录下载本仓库的spec文件
 

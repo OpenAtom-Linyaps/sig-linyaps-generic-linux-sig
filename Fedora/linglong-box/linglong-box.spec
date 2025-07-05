@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong-box
-Version:        2.0.0
+Version:        2.0
 Release:        1
 Summary:        Linglong sandbox
 License:        LGPLv3
@@ -15,7 +15,7 @@ Requires:       glib2 shared-mime-info erofs-utils
 Linglong sandbox with OCI standard.
 
 %prep
-%autosetup -p1 -n linyaps-box-%{version}
+%autosetup -p1 -n linyaps-box-release-%{version}
 
 %define _debugsource_template %{nil}
 
