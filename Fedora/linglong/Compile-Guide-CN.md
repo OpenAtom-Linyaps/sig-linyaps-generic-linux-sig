@@ -72,11 +72,11 @@
 
 ### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑的源代码
 
-`cd SOURCES && wget -O linyaps.zip https://gitee.com/LFRon/Linyaps-generic-linux-SIG/releases/download/1.9.4-1/linyaps-1.9.4-source.zip && cd ..`
+`cd SOURCES && wget -O linyaps.zip https://gitee.com/LFRon/Linyaps-generic-linux-SIG/releases/download/1.9.4-1/linyaps-1.9.4-1-source.zip && cd ..`
 
 ### 3.在rpmbuild/SPECS目录下载本仓库的spec文件
 
-`cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong.spec && cd ..`
+`cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong/linglong.spec && cd ..`
 
 ## 三.安装构建玲珑
 
