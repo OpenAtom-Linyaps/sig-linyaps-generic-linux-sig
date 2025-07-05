@@ -18,7 +18,7 @@
 
 ### 2.进入到对应用户的"~"文件夹,也就是
 
-`cd /home/${USER}`
+`cd ~`
 
 ### 3.新建RPM包编译工作环境
 
@@ -68,7 +68,7 @@
 
 ### 1.进入工作编译目录
 
-`cd /home/${USER}/rpmbuild`
+`cd ~/rpmbuild`
 
 ### 2.在rpmbuild/SOURCES目录下载.zip格式的玲珑的源代码
 
