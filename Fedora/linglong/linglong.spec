@@ -117,9 +117,8 @@ cd build
 %{_libexecdir}/%{name}/builder/helper/*.sh
 %{_datadir}/bash-completion/completions/ll-builder
 %{_datadir}/%{name}/builder/templates/*.yaml
-/usr/share/linglong/builder/uab/*
+%{_datadir}/%{name}/builder/uab/*
 
-%license LICENSE
 
 %changelog
 * Sat Jul 5 2025 chenhuixing <chenhuixing@deepin.org> - 1.9.4-1
