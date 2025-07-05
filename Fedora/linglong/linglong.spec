@@ -93,15 +93,18 @@ cd build
 %{_libexecdir}/%{name}/font-cache-generator
 %{_libexecdir}/%{name}/ll-dialog
 %{_libexecdir}/%{name}/dialog/99-linglong-permission
+%{_libexecdir}/%{name}/dumb-init
 %{_datadir}/bash-completion/completions/ll-cli
 %{_datadir}/dbus-1/system-services/*.service
 %{_datadir}/dbus-1/system.d/*.conf
 %{_datadir}/polkit-1/actions/org.deepin.linglong.PackageManager1.policy
 %{_datadir}/%{name}/config.yaml
+%{_datadir}/%{name}/export-dirs.json
 %{_datadir}/mime/packages/*
 %{_datadir}/locale/*
-/usr/share/zsh/*
-/usr/share/applications/*
+%{_datadir}/zsh/*
+%{_datadir}/applications/*
+
 
 %files -n linglong-builder
 %license LICENSE
