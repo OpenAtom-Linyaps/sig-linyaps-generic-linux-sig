@@ -40,7 +40,9 @@
 
 `rpmbuild -bb linglong-box.spec`
 
-#### 之后产生的RPM安装包就在`~/rpmbuild/RPMS/<对应架构>`下,将其全部导出并进行分发即可
+
+
+### 之后产生的玲珑-box的RPM安装包就在`~/rpmbuild/RPMS/<对应架构>`下,将其全部导出并进行分发即可
 
 
 
