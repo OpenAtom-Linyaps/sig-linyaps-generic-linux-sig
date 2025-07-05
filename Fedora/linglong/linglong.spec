@@ -7,7 +7,7 @@ License:        LGPLv3
 URL:            https://github.com/linuxdeepin/%{name}
 Source0:        linyaps.zip
 
-BuildRequires:  cmake gcc-c++
+BuildRequires:  cmake gcc-c++ linglong-box
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel
 BuildRequires:  systemd-devel gtest-devel libseccomp-devel elfutils-libelf-devel
@@ -15,12 +15,12 @@ BuildRequires:  glibc-static libstdc++-static
 BuildRequires:  libcurl-devel openssl-devel libcap-devel
 BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
-Requires:       desktop-file-utils erofs-fuse
+Requires:       desktop-file-utils erofs-fuse linglong-box
 Requires:       glib2 shared-mime-info erofs-utils
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
-Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container on Linux.
+Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container powered by Linyaps-box on Linux.
 
 %package        -n linglong-bin
 Summary:        Linglong package manager

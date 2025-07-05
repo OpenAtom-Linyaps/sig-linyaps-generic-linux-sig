@@ -12,7 +12,7 @@ Requires:       desktop-file-utils erofs-fuse
 Requires:       glib2 shared-mime-info erofs-utils
 
 %description
-Linglong sandbox with OCI standard.
+Linyaps sandbox with OCI standard.
 
 %prep
 %autosetup -p1 -n linyaps-box-release-%{version}
