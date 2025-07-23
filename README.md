@@ -7,12 +7,12 @@
 ## 活动范围
 
 - 让玲珑能在各个Linux发行版上正常编译运行
-- 让玲珑应用能在各个Linux发行版和不同的桌面环境上正常运行
+- 让玲珑的应用能在各个Linux发行版和不同的桌面环境上正常运行
 - 向国际发行版用户推广玲珑,同时积极反馈其他Linux发行版用户对玲珑的改进建议
 
 ## 招募
 
-- 我们非常欢迎国际Linux发行版(比如Debian,LinuxMINT,Ubuntu,ArchLinux,Fedora等)用户并对玲珑感兴趣并愿意为其添砖加瓦的用户🥰
+- 我们非常欢迎国际Linux发行版(比如Debian,Linux MINT,Ubuntu,ArchLinux,Fedora等)用户并对玲珑感兴趣并愿意为其添砖加瓦的用户🥰
 
 ## 讨论渠道
 - QQ群
