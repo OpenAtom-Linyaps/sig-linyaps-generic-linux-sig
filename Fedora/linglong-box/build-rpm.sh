@@ -23,7 +23,7 @@ cd ~/rpmbuild
 
 echo "- 正在下载源码"
 #下载最新源码压缩包
-cd SOURCES && wget -O linyaps-box.zip https://github.com/OpenAtom-Linyaps/linyaps-box/archive/refs/tags/2.0.0.zip && cd ..
+cd SOURCES && wget -O linyaps-box.zip https://github.com/OpenAtom-Linyaps/linyaps-box/archive/refs/tags/2.0.3.zip && cd ..
 
 echo "- 正在安装编译依赖"
 #安装编译依赖
