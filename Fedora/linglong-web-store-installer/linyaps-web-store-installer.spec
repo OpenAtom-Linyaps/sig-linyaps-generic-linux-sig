@@ -14,7 +14,7 @@ Requires:       linglong-bin
 Linyaps web install helper.
 
 %prep
-%autosetup -p1 -n linglong-web-store-installer-%{version}
+%autosetup -p1 -n linyaps-web-store-installer-%{version}
 
 %define _debugsource_template %{nil}
 
@@ -33,7 +33,8 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
 %make_build
 
 %files
-%{_bindir}/ll-box
+%{_bindir}/ll-installer
+%{_datadir}/applications/*
 
 %install
 cd build
