@@ -8,7 +8,7 @@ URL:            https://github.com/linuxdeepin/%{name}
 Source0:        linyaps.zip
 
 BuildRequires:  cmake gcc-c++ linglong-box
-BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
+BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel qt-devel
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel
 BuildRequires:  systemd-devel gtest-devel libseccomp-devel elfutils-libelf-devel
 BuildRequires:  glibc-static libstdc++-static

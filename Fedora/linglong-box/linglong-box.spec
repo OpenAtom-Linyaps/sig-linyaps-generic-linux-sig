@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong-box
-Version:        2.0.4-0
+Version:        2.0.4
 Release:        1
 Summary:        Linglong sandbox runtime.
 License:        LGPLv3
@@ -39,7 +39,7 @@ cd build
 
 %changelog
 * Thu Jun 26 2025 LFRon <ronforever@qq.com> - 2.0.4-0
-- Follow the Master-branch upstream version 2.0.4-0
+- Follow the Master-branch upstream 2.0.4-0
 
 * Thu Jun 26 2025 chenchenjun <chenjiehai1024@gmail.com> - 2.0.0-1
 - Follow the upstream version 2.0.0-1
