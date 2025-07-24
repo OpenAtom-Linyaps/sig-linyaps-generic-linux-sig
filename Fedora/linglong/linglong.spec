@@ -8,7 +8,7 @@ URL:            https://github.com/linuxdeepin/%{name}
 Source0:        linyaps.zip
 
 BuildRequires:  cmake gcc-c++ linglong-box
-BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel qt-devel
+BuildRequires:  qt6-qtbase-devel qt-devel qt6-qtbase-private-devel
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel
 BuildRequires:  systemd-devel gtest-devel libseccomp-devel elfutils-libelf-devel
 BuildRequires:  glibc-static libstdc++-static
@@ -49,7 +49,10 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DSYSCONF_INSTALL_DIR:PATH=%{_sysconfdir} \
       -DSHARE_INSTALL_PREFIX:PATH=%{_datadir} \
       -DBUILD_SHARED_LIBS=OFF \
-      -DQT_VERSION_MAJOR=5 \
+      -DCPM_LOCAL_PACKAGES_ONLY=ON \
+      -DENABLE_LINGLONG_INSTALLER=ON \
+      -DLINGLONG_EXPORT_PATH=apps/share \
+      -DQT_VERSION_MAJOR=6 \
       -DCPM_LOCAL_PACKAGES_ONLY=ON ..
 %make_build
 
