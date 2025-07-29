@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.10.0
+Version:        1.9.9
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPLv3
@@ -121,11 +121,9 @@ cd build
 
 
 %changelog
-* Wed Jul 23 2025 LFRon <ronforever@qq.com> - 1.10.0-1
-- fix AppIndicator issue on Low-Electron-version apps.
-- fix: clean sources directory on every build
-- fix: add rbind option alongside copy-symlink
-- Follow the upstream version 1.10.0-alpha0
+* Tue Jul 29 2025 LFRon <ronforever@qq.com> - 1.9.9-1
+- fix AppIndicator issue on low-electron-version apps.
+- Follow the upstream release 1.9.8
 
 * Sat Jul 5 2025 chenhuixing <chenhuixing@deepin.org> - 1.9.4-1
 - Follow the upstream version 1.9.4-1
