@@ -3,8 +3,8 @@ Name:           linglong
 Version:        1.9.9
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
-License:        LGPLv3
-URL:            https://github.com/linuxdeepin/%{name}
+License:        LGPL v3
+URL:            https://gitee.com/LFRon/linyaps-generic-linux
 Source0:        linyaps.zip
 
 BuildRequires:  cmake gcc-c++ linglong-box
@@ -35,12 +35,11 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-%{version}-1
+%autosetup -p1 -n linyaps-generic-linux-%{version}-1
 
 %define _debugsource_template %{nil}
 
 %build
-export PATH=%{_qt5_bindir}:$PATH
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_POSITION_INDEPENDENT_CODE=ON  \
@@ -122,8 +121,9 @@ cd build
 
 %changelog
 * Tue Jul 29 2025 LFRon <ronforever@qq.com> - 1.9.9-1
-- fix AppIndicator issue on low-electron-version apps.
-- Follow the upstream release 1.9.8
+- fix AppIndicator issue on low-electron-version apps
+- fix media device like USB failed to open in the linyaps apps
+- Follow the upstream release 1.9.9-1
 
 * Sat Jul 5 2025 chenhuixing <chenhuixing@deepin.org> - 1.9.4-1
 - Follow the upstream version 1.9.4-1

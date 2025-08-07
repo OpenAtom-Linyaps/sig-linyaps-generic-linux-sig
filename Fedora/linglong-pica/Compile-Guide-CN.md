@@ -54,10 +54,10 @@
 
 ### 进入rpmbuild/SPECS目录后使用dnf命令安装对应依赖即可
 
-#### `cd SPECS && sudo dnf builddep linglong.spec -y`
+#### `cd SPECS && sudo dnf builddep linglong-pica.spec -y`
 
 ## 四.进行构建并生成RPM包
 
-### `rpmbuild -bb linglong.spec`
+### `rpmbuild -bb linglong-pica.spec`
 
 #### 之后产生的RPM安装包就在`~/rpmbuild/RPMS/<对应架构>`下,将其全部导出并进行分发即可

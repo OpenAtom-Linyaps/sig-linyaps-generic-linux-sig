@@ -23,7 +23,7 @@ cd ~/rpmbuild
 
 echo "- 正在下载源码"
 #下载最新源码压缩包
-cd SOURCES && wget -O linyaps.zip https://github.com/deepin-community/linyaps/archive/refs/tags/1.9.0-1.zip && cd ..
+cd SOURCES && wget -O linyaps.zip https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.9-1.zip && cd ..
 
 echo "- 拷贝编译文件到SPECS"
 cd SPECS && cp ${current_dir}/linglong.spec ./
