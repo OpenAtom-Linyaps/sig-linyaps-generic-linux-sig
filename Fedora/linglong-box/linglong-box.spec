@@ -15,7 +15,7 @@ Requires:       glib2 shared-mime-info erofs-utils
 Linyaps sandbox with OCI standard.It is used by Linyaps.
 
 %prep
-%autosetup -p1 -n linyaps-box-release-%{version}
+%autosetup -p1 -n linyaps-box-linux-generic-%{version}-1
 
 %define _debugsource_template %{nil}
 

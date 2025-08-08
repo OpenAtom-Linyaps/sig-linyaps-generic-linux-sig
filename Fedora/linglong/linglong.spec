@@ -92,7 +92,7 @@ cd build
 %{_libexecdir}/%{name}/ld-cache-generator
 %{_libexecdir}/%{name}/font-cache-generator
 %{_libexecdir}/%{name}/ll-dialog
-%{_libexecdir}/%{name}/ll-init
+%{_libexecdir}/%{name}/dumb-init
 %{_libexecdir}/%{name}/dialog/99-linglong-permission
 %{_datadir}/bash-completion/completions/ll-cli
 %{_datadir}/dbus-1/system-services/*.service
