@@ -40,10 +40,10 @@ rpmbuild -bb ${WORKDIR}/SPECS/linyaps-web-store-installer.spec
 
 echo "- 正在拷贝RPM安装包"
 #拷贝RPM安装包到当前目录
-cp ${WORKDIR}/SPECS/RPMS/*/* ${current_dir}
+cp ${WORKDIR}/RPMS/*/* ${current_dir}
 
 echo "- 清理编译目录"
 #清理工作目录
-sudo rm -r ${WORKDIR}/SPECS
+sudo rm -r ${WORKDIR}
 
-echo "- 玲珑-Pica的RPM安装包构建完成!"
+echo "- 玲珑在线安装器的RPM安装包构建完成!"
