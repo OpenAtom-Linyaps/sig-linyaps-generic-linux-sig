@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linyaps-web-store-installer
-Version:        1.6.6
+Version:        1.6.7
 Release:        1
 Summary:        Linyaps web-install helper.
 License:        LGPLv3
