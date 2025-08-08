@@ -24,19 +24,19 @@ cd ${WORKDIR}
 
 echo "- 正在下载源码"
 #下载最新源码压缩包
-cd SOURCES && wget -O linglong-pica.zip https://github.com/linuxdeepin/linglong-pica/archive/refs/heads/master.zip && cd ..
+cd SOURCES && wget -O linyaps-web-store-installer.zip https://github.com/OpenAtom-Linyaps/linyaps-web-store-installer/archive/refs/tags/v1.6.7.zip && cd ..
 
 echo "- 正在下载SPEC编译文件"
 #下载最新SPEC编译文件
-cd SPECS && wget https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong-pica/linglong-pica.spec && cd ..
+cd SPECS && wget -O linyaps-web-store-installer.spec https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong-web-store-installer/linyaps-web-store-installer.spec && cd ..
 
 echo "- 正在安装编译依赖"
 #进入SPEC文件所在文件夹并安装编译依赖
-sudo dnf builddep ${WORKDIR}/SPECS/linglong-pica.spec -y
+sudo dnf builddep ${WORKDIR}/SPECS/linyaps-web-store-installer.spec -y
 
 echo "- 开始编译"
 #开始编译
-rpmbuild -bb ${WORKDIR}/SPECS/linglong-pica.spec
+rpmbuild -bb ${WORKDIR}/SPECS/linyaps-web-store-installer.spec
 
 echo "- 正在拷贝RPM安装包"
 #拷贝RPM安装包到当前目录

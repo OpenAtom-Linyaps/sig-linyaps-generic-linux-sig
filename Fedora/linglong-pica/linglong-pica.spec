@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name: linglong-pica
-Version: 1.2.4-4
+Version: 1.2.4
 Release: 1
 Summary: Linglong Convert tools
 License: LGPLv3
