@@ -5,7 +5,7 @@ Summary:        linglong web store installer
 
 License:        GPL-3.0-or-later
 URL:            https://gitee.com/LFRon/linyaps-web-store-installer
-Source0:        linyaps-web-store-installer-master.zip
+Source0:        linyaps-web-store-installer.zip
 
 BuildRequires:  cmake >= 3.0
 BuildRequires:  gcc-c++
