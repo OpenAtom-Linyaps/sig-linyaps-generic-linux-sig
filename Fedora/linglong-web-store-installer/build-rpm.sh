@@ -24,7 +24,7 @@ cd ${WORKDIR}
 
 echo "- 正在下载源码"
 #下载最新源码压缩包
-cd SOURCES && wget -O linyaps-web-store-installer.zip https://github.com/OpenAtom-Linyaps/linyaps-web-store-installer/archive/refs/tags/v1.6.7.zip && cd ..
+cd SOURCES && wget -O linyaps-web-store-installer.zip https://gitee.com/LFRon/linyaps-web-store-installer/repository/archive/master.zip && cd ..
 
 echo "- 正在下载SPEC编译文件"
 #下载最新SPEC编译文件
