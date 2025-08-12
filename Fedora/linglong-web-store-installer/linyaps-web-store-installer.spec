@@ -22,7 +22,7 @@ It provides a GUI interface for installing applications from the linglong
 ecosystem with OCI standard support.
 
 %prep
-%setup -q
+%autosetup -p1 -n linyaps-web-store-installer-master
 
 %build
 %cmake \
