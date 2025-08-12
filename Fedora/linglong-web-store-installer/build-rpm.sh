@@ -14,7 +14,7 @@ current_dir=${PWD}
 WORKDIR="/home/${USER}/rpmbuild"
 
 #更新软件源并安装编译所需的基础依赖
-sudo dnf update && sudo dnf install @development-tools rpmdevtools rpmlint wget -y
+sudo dnf update -y && sudo dnf install @development-tools rpmdevtools rpmlint wget -y
 
 #设置软件编译文件夹
 rpmdev-setuptree
