@@ -10,7 +10,7 @@
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/linyaps-box.svg)](https://repology.org/project/linyaps-box/versions)
 
-- linyaps-installer 
+- linyaps-web-store-installer 
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/linyaps-web-store-installer.svg)](https://repology.org/project/linyaps-web-store-installer/versions)
 
