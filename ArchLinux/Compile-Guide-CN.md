@@ -12,7 +12,7 @@
 
 - linyaps-installer 
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/linyaps-installer.svg)](https://repology.org/project/linyaps-installer/versions)
+[![Packaging status](https://repology.org/badge/vertical-allrepos/linyaps-web-store-installer.svg)](https://repology.org/project/linyaps-web-store-installer/versions)
 
 - linglong-pica
 
@@ -40,12 +40,12 @@ sudo pacman -Syu linyaps
 sudo pacman -Syu linyaps-box
 ```
 
-### 安装 linyaps-installer
+### 安装 linyaps-web-store-installer
 
-通过 [AUR](https://aur.archlinux.org/packages/linyaps-installer) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linyaps-installer
+通过 [AUR](https://aur.archlinux.org/packages/linyaps-web-store-installer) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linyaps-web-store-installer
 
 ```bash
-yay -Syu linyaps-installer
+yay -Syu linyaps-web-store-installer
 ```
 
 ### 安装 linglong-pica
@@ -97,18 +97,18 @@ updpkgsums && makepkg -sf
 sudo pacman -U linyaps-box*
 ```
 
-### 安装 linyaps-installer
+### 安装 linyaps-web-store-installer
 
 ```bash
-# 进入 linyaps-installer 目录
-cd linyaps-installer
+# 进入 linyaps-web-store-installer 目录
+cd linyaps-web-store-installer
 # 修改 PKGBUILD 中的版本号
 vim PKGBUILD
 # 更新校验值并本地编译
 updpkgsums && makepkg -sf
-# 安装 linyaps-installer 
+# 安装 linyaps-web-store-installer
 # 注意 -debug 是调试包，可选安装
-sudo pacman -U linyaps-installer*
+sudo pacman -U linyaps-web-store-installer*
 ```
 
 ### 安装 linglong-pica
