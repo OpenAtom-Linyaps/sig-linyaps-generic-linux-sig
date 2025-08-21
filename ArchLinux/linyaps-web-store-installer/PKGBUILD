@@ -1,6 +1,6 @@
 # Maintainer: taotieren <admin@taotieren.com>
 
-pkgname=linyaps-installer
+pkgname=linyaps-web-store-installer
 _tagname=1.6.6
 pkgver="${_tagname//-/_}"
 pkgrel=2
