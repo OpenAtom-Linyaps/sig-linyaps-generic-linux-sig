@@ -30,6 +30,9 @@ make build
 %attr(755,root,root) /usr/libexec/*
 
 %changelog
+* Thu Sep 4 2025 LFRon <ronforever@qq.com> - 1.2.4-5
+- follow master branch upstream to 1.2.4-5
+
 * Tue Jul 29 2025 LFRon <ronforever@qq.com> - 1.2.4-4
 - follow master branch upstream to 1.2.4-4
 

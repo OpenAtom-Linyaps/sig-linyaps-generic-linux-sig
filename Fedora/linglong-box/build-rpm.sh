@@ -27,7 +27,7 @@ cd ${WORKDIR}
 echo "- 正在下载源码"
 
 #下载最新源码压缩包与构建脚本
-cd SOURCES && wget -O linyaps-box.zip https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.0-1.zip && cd ..
+cd SOURCES && wget -O linyaps-box.zip https://gitee.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.0-1.zip && cd ..
 cd SPECS && wget -O linglong-box.spec https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong-box/linglong-box.spec && cd ..
 
 echo "- 正在安装编译依赖"

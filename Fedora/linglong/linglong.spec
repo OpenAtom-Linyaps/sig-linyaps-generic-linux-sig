@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.9
+Version:        1.9.10
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
@@ -92,7 +92,7 @@ cd build
 %{_libexecdir}/%{name}/ld-cache-generator
 %{_libexecdir}/%{name}/font-cache-generator
 %{_libexecdir}/%{name}/ll-dialog
-%{_libexecdir}/%{name}/dumb-init
+%{_libexecdir}/%{name}/ll-init
 %{_libexecdir}/%{name}/dialog/99-linglong-permission
 %{_datadir}/bash-completion/completions/ll-cli
 %{_datadir}/dbus-1/system-services/*.service
@@ -103,6 +103,7 @@ cd build
 %{_datadir}/mime/packages/*
 %{_datadir}/locale/*
 %{_datadir}/zsh/*
+%{_datadir}/icons/*
 %{_datadir}/applications/*
 
 
@@ -120,6 +121,10 @@ cd build
 
 
 %changelog
+* Thu Sep 4 2025 LFRon <ronforever@qq.com> - 1.9.10-1
+- fix: 修复重复的运行时依赖 (where runtime dependencies were not being correctly deduplicated)
+- Follow the upstream release 1.9.10-1
+
 * Tue Jul 29 2025 LFRon <ronforever@qq.com> - 1.9.9-1
 - fix AppIndicator issue on low-electron-version apps
 - fix media device like USB failed to open in the linyaps apps

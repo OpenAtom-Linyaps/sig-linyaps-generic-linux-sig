@@ -38,8 +38,11 @@ cd build
 
 
 %changelog
-* Thu Aug 07 2025 LFRon <ronforever@qq.com> - 2.1.0-1
+* Thu Sep 4 2025 LFRon <ronforever@qq.com> - 2.1.0-2
 - Follow the upstream 2.1.0-1
+
+* Thu Aug 07 2025 LFRon <ronforever@qq.com> - 2.1.0-1
+- Follow the upstream 2.1.0
 - fix: /tmp share with host
 
 * Thu Jun 26 2025 LFRon <ronforever@qq.com> - 2.0.4-0

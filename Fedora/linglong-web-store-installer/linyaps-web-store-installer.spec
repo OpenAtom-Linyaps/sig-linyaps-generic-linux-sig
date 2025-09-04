@@ -1,6 +1,6 @@
 Name:           linglong-installer
-Version:        1.6.6
-Release:        1%{?dist}
+Version:        1.6.8
+Release:        1
 Summary:        linglong web store installer
 
 License:        GPL-3.0-or-later
@@ -22,7 +22,7 @@ It provides a GUI interface for installing applications from the linglong
 ecosystem with OCI standard support.
 
 %prep
-%autosetup -p1 -n linyaps-web-store-installer-master
+%autosetup -p1 -n linyaps-web-store-installer-%{version}-1
 
 %build
 %cmake \
@@ -44,6 +44,9 @@ xdg-mime default space.linglong.Installer.desktop x-scheme-handler/og
 %{_datadir}/applications/space.linglong.Installer.desktop
 
 %changelog
+* Thu Sep 4 2025 LFRon <ronforever@qq.com> - 1.6.8-1
+- update follow upstream 1.6.8-1
+
 * Wed Apr 02 2025 dengbo <dengbo@deepin.org> - 1.6.6-1
 - feat: support Qt6 packaging
 - update follow upstream 1.6.6-1
