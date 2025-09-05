@@ -24,7 +24,7 @@
 
 ## 在线安装
 
-### 安装 linyaps
+### 安装 linyaps 发行版
 
 通过 [Arch Linux extra 仓库](https://archlinux.org/packages/extra/x86_64/linyaps/) 安装 linyaps
 
@@ -32,7 +32,15 @@
 sudo pacman -Syu linyaps
 ```
 
-### 安装 linyaps-box
+### 安装 linyaps-git 开发版
+
+通过 [AUR](https://aur.archlinux.org/packages/linyaps-git) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linyaps-git
+
+```bash
+yay -Syu linyaps-git
+```
+
+### 安装 linyaps-box 发行版
 
 通过 [Arch Linux extra 仓库](https://archlinux.org/packages/extra/x86_64/linyaps-box/) 安装 linyaps-box
 
@@ -40,7 +48,15 @@ sudo pacman -Syu linyaps
 sudo pacman -Syu linyaps-box
 ```
 
-### 安装 linyaps-web-store-installer
+### 安装 linyaps-box-git 开发版
+
+通过 [AUR](https://aur.archlinux.org/packages/linyaps-box-git) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linyaps-box-git
+
+```bash
+yay -Syu linyaps-box-git
+```
+
+### 安装 linyaps-web-store-installer 发行版
 
 通过 [AUR](https://aur.archlinux.org/packages/linyaps-web-store-installer) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linyaps-web-store-installer
 
@@ -48,7 +64,15 @@ sudo pacman -Syu linyaps-box
 yay -Syu linyaps-web-store-installer
 ```
 
-### 安装 linglong-pica
+### 安装 linyaps-web-store-installer-git 开发版
+
+通过 [AUR](https://aur.archlinux.org/packages/linyaps-web-store-installer-git) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linyaps-web-store-installer
+
+```bash
+yay -Syu linyaps-web-store-installer-git
+```
+
+### 安装 linglong-pica 发行版
 
 通过 [AUR](https://aur.archlinux.org/packages/linglong-pica) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linglong-pica
 
@@ -56,12 +80,28 @@ yay -Syu linyaps-web-store-installer
 yay -Syu linglong-pica
 ```
 
-### 安装 linglong-tools
+### 安装 linglong-pica-git 开发版
+
+通过 [AUR](https://aur.archlinux.org/packages/linglong-pica-git) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linglong-pica-git
+
+```bash
+yay -Syu linglong-pica-git
+```
+
+### 安装 linglong-tools 发行版
 
 通过 [AUR](https://aur.archlinux.org/packages/linglong-tools) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linglong-tools
 
 ```bash
 yay -Syu linglong-tools
+```
+
+### 安装 linglong-tools-git 开发版
+
+通过 [AUR](https://aur.archlinux.org/packages/linglong-tools-git) 或[自建源](https://github.com/taotieren/aur-repo) 安装 linglong-tool-git
+
+```bash
+yay -Syu linglong-tools-git
 ```
 
 ## 本地编译安装
