@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 Name: linglong-pica
-Version: 1.2.4
+Version: 1.2.6
 Release: 1
 Summary: Linglong Convert tools
 License: LGPLv3
@@ -30,6 +30,9 @@ make build
 %attr(755,root,root) /usr/libexec/*
 
 %changelog
+* Sun Sep 14 2025 LFRon <ronforever@qq.com> - 1.2.6-1
+- follow master branch upstream to 1.2.6-1
+
 * Thu Sep 4 2025 LFRon <ronforever@qq.com> - 1.2.4-5
 - follow master branch upstream to 1.2.4-5
 
