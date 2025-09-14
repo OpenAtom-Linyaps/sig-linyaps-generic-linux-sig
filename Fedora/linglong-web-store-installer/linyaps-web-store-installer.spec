@@ -1,7 +1,7 @@
-Name:           linglong-installer
+Name:           linyaps-web-store-installer
 Version:        1.6.8
 Release:        1
-Summary:        linglong web store installer
+Summary:        linyaps web store installer
 
 License:        GPL-3.0-or-later
 URL:            https://gitee.com/LFRon/linyaps-web-store-installer
