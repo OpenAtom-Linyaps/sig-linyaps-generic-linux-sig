@@ -35,7 +35,7 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-generic-linux-%{version}-1
+%autosetup -p1 -n linyaps-generic-linux-%{version}-2
 
 %define _debugsource_template %{nil}
 
@@ -121,8 +121,12 @@ cd build
 
 
 %changelog
+* Fri Sep 12 2025 LFRon <ronforever@qq.com> - 1.9.10-2
+- fix: build runtime error
+- Follow the upstream release 1.9.10-2
+
 * Thu Sep 4 2025 LFRon <ronforever@qq.com> - 1.9.10-1
-- fix: 修复重复的运行时依赖 (where runtime dependencies were not being correctly deduplicated)
+- fix: runtime dependencies were not being correctly deduplicated
 - Follow the upstream release 1.9.10-1
 
 * Tue Jul 29 2025 LFRon <ronforever@qq.com> - 1.9.9-1
