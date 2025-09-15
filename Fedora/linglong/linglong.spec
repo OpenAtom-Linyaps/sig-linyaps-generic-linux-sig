@@ -5,10 +5,10 @@ Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        linyaps.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.10-2.zip
 
-BuildRequires:  cmake gcc-c++ linglong-box
-BuildRequires:  qt6-qtbase-devel qt-devel qt6-qtbase-private-devel
+BuildRequires:  cmake gcc-c++ gettext intltool
+BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel
 BuildRequires:  systemd-devel gtest-devel libseccomp-devel elfutils-libelf-devel
 BuildRequires:  glibc-static libstdc++-static
@@ -18,6 +18,7 @@ Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils erofs-fuse linglong-box
 Requires:       glib2 shared-mime-info erofs-utils
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
+Recommends:    erofs-fuse
 
 %description
 Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container powered by Linyaps-box on Linux.
@@ -101,10 +102,10 @@ cd build
 %{_datadir}/%{name}/config.yaml
 %{_datadir}/%{name}/export-dirs.json
 %{_datadir}/mime/packages/*
-%{_datadir}/locale/*
 %{_datadir}/zsh/*
 %{_datadir}/icons/*
 %{_datadir}/applications/*
+%{_datadir}/locale/*
 
 
 %files -n linglong-builder

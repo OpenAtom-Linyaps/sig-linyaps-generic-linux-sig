@@ -1,16 +1,17 @@
+%define debug_package %{nil}
+%define _enable_debug_package 0
 Name:           linyaps-web-store-installer
 Version:        1.6.8
 Release:        1
 Summary:        linyaps web store installer
-
 License:        GPL-3.0-or-later
 URL:            https://gitee.com/LFRon/linyaps-web-store-installer
-Source0:        linyaps-web-store-installer.zip
+Source0:        https://github.com/OpenAtom-Linyaps/linyaps-web-store-installer/archive/refs/tags/1.6.8.zip
 
-BuildRequires:  cmake >= 3.0
+BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig
-BuildRequires:  qt5-qtbase-devel
+BuildRequires:  qt6-qtbase-devel
 BuildRequires:  xdg-utils
 
 Requires:       linglong-bin
@@ -22,17 +23,17 @@ It provides a GUI interface for installing applications from the linglong
 ecosystem with OCI standard support.
 
 %prep
-%autosetup -p1 -n linyaps-web-store-installer-%{version}-1
+%autosetup -p1 -n linyaps-web-store-installer-%{version}
 
 %build
-%cmake \
-    -DCMAKE_BUILD_TYPE=Release \
+cmake -B build \
     -DCMAKE_INSTALL_PREFIX=%{_prefix} \
-    -DQT_VERSION_MAJOR=5
-%cmake_build
+    -DCMAKE_BUILD_TYPE=Release
+
+cmake --build build
 
 %install
-%cmake_install
+DESTDIR=%{buildroot} cmake --install build
 
 %post
 xdg-mime default space.linglong.Installer.desktop x-scheme-handler/og

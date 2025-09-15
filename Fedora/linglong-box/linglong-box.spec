@@ -7,9 +7,10 @@ License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-box-linux-generic
 Source0:        https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.0-1.zip
 
-BuildRequires:  cmake gcc-c++ glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel hello erofs-fuse
-Requires:       desktop-file-utils erofs-fuse
+BuildRequires:  cmake gcc-c++ glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
+Requires:       desktop-file-utils
 Requires:       glib2 shared-mime-info erofs-utils
+Recommends:    erofs-fuse
 
 %description
 Linyaps sandbox with OCI standard.It is used by Linyaps.

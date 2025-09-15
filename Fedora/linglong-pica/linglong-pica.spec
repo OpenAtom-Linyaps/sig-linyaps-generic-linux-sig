@@ -5,7 +5,7 @@ Release: 1
 Summary: Linglong Convert tools
 License: LGPLv3
 URL:     https://github.com/linuxdeepin/linglong-pica
-Source0: linglong-pica.zip
+Source0: https://github.com/linuxdeepin/linglong-pica/archive/refs/heads/master.zip
 
 BuildRequires:golang
 Requires:linglong-box
