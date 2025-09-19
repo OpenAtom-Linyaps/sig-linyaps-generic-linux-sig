@@ -9,7 +9,7 @@ Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel
 BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
-BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel
+BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel
 BuildRequires:  glibc-static libstdc++-static
 BuildRequires:  libcurl-devel openssl-devel libcap-devel

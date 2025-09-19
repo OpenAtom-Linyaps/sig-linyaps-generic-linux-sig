@@ -27,7 +27,7 @@ cd ${WORKDIR}
 
 echo "- 正在下载源码与SPEC文件"
 #下载最新源码压缩包
-cd SOURCES && wget -O linyaps.zip https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.10-1.zip && cd ..
+cd SOURCES && wget -O linyaps.zip https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.10-2.zip && cd ..
 cd SPECS && wget -O linglong.spec https://raw.githubusercontent.com/OpenAtom-Linyaps/sig-linyaps-generic-linux-sig/refs/heads/main/Fedora/linglong/linglong.spec && cd ..
 
 
