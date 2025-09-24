@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.10
+Version:        1.9.12
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.10-2.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.12-1.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel
 BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
@@ -15,7 +15,7 @@ BuildRequires:  glibc-static libstdc++-static
 BuildRequires:  libcurl-devel openssl-devel libcap-devel
 BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
-Requires:       desktop-file-utils linglong-box
+Requires:       desktop-file-utils linglong-box fuse-overlayfs uidmap
 Requires:       glib2 shared-mime-info erofs-utils systemd
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 Recommends:    erofs-fuse
@@ -36,7 +36,7 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-generic-linux-%{version}-2
+%autosetup -p1 -n linyaps-generic-linux-%{version}-1
 
 %define _debugsource_template %{nil}
 
@@ -122,6 +122,10 @@ cd build
 
 
 %changelog
+* Fri Sep 19 2025 LFRon <ronforever@qq.com> - 1.9.12-1
+- fix: correct no-dbus flag logic
+- Follow the upstream release 1.9.12
+
 * Fri Sep 12 2025 LFRon <ronforever@qq.com> - 1.9.10-2
 - fix: build runtime error
 - Follow the upstream release 1.9.10-2
