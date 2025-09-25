@@ -7,7 +7,7 @@ License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
 Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.12-1.zip
 
-BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel
+BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel
@@ -42,6 +42,8 @@ This Linyaps sub-package is a tool that makes it easy to build applications and 
 
 %build
 mkdir build && cd build
+# Because EPEL doesn't put qdbusxml2cpp into the /bin so we need to do it manually.
+sudo rm -f /usr/bin/qdbusxml2cpp && sudo ln -s /usr/lib64/qt5/bin/qdbusxml2cpp /usr/bin/qdbusxml2cpp
 cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_POSITION_INDEPENDENT_CODE=ON  \
       -DINCLUDE_INSTALL_DIR:PATH=%{_includedir} \
@@ -52,7 +54,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCPM_LOCAL_PACKAGES_ONLY=ON \
       -DENABLE_LINGLONG_INSTALLER=ON \
       -DLINGLONG_EXPORT_PATH=apps/share \
-      -DQT_VERSION_MAJOR=6 \
+      -DQT_VERSION_MAJOR=5 \
       -DCPM_LOCAL_PACKAGES_ONLY=ON ..
 %make_build
 
