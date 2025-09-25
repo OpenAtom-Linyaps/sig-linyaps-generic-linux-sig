@@ -17,7 +17,7 @@ BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils linglong-box fuse-overlayfs uidmap
 Requires:       glib2 shared-mime-info erofs-utils systemd
-Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
+Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts
 Recommends:    erofs-fuse
 
 %description
@@ -25,7 +25,7 @@ Linyaps is a secondary package manager on Linux.It could run apps with stable an
 
 %package        -n linglong-bin
 Summary:        Linglong package manager
-Requires:       linglong-box google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
+Requires:       linglong-box google-noto-sans-mono-fonts wqy-zenhei-fonts
 %description    -n linglong-bin
 Linyaps package management command line tool.
 
