@@ -11,7 +11,7 @@ Source0:        https://github.com/OpenAtom-Linyaps/linyaps-web-store-installer/
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig
-BuildRequires:  qt6-qtbase-devel
+BuildRequires:  qt5-qtbase-devel
 BuildRequires:  xdg-utils
 
 Requires:       linglong-bin
@@ -28,6 +28,7 @@ ecosystem with OCI standard support.
 %build
 cmake -B build \
     -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+    -DQT_VERSION_MAJOR=5 \
     -DCMAKE_BUILD_TYPE=Release
 
 cmake --build build
@@ -47,6 +48,7 @@ xdg-mime default space.linglong.Installer.desktop x-scheme-handler/og
 %changelog
 * Thu Sep 4 2025 LFRon <ronforever@qq.com> - 1.6.8-1
 - update follow upstream 1.6.8-1
+- compile using Qt5 as default
 
 * Wed Apr 02 2025 dengbo <dengbo@deepin.org> - 1.6.6-1
 - feat: support Qt6 packaging

@@ -15,7 +15,7 @@ BuildRequires:  glibc-static libstdc++-static
 BuildRequires:  libcurl-devel openssl-devel libcap-devel
 BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
-Requires:       desktop-file-utils linglong-box fuse-overlayfs uidmap
+Requires:       desktop-file-utils linglong-box fuse-overlayfs shadow-utils
 Requires:       glib2 shared-mime-info erofs-utils systemd
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts
 Recommends:    erofs-fuse
