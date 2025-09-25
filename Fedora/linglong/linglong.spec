@@ -42,8 +42,6 @@ This Linyaps sub-package is a tool that makes it easy to build applications and 
 
 %build
 mkdir build && cd build
-# Because EPEL doesn't put qdbusxml2cpp into the /bin so we need to do it manually.
-sudo rm -f /usr/bin/qdbusxml2cpp && sudo ln -s /usr/lib64/qt5/bin/qdbusxml2cpp /usr/bin/qdbusxml2cpp
 cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_POSITION_INDEPENDENT_CODE=ON  \
       -DINCLUDE_INSTALL_DIR:PATH=%{_includedir} \
@@ -55,7 +53,8 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DENABLE_LINGLONG_INSTALLER=ON \
       -DLINGLONG_EXPORT_PATH=apps/share \
       -DQT_VERSION_MAJOR=5 \
-      -DCPM_LOCAL_PACKAGES_ONLY=ON ..
+      -DCPM_LOCAL_PACKAGES_ONLY=ON \
+      -DQt5DBus_QDBUSXML2CPP_EXECUTABLE=/usr/lib64/qt5/bin/qdbusxml2cpp ..
 %make_build
 
 %install
