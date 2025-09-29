@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.12
+Version:        1.9.13
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.12-1.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-1.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
@@ -53,7 +53,6 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DENABLE_LINGLONG_INSTALLER=ON \
       -DLINGLONG_EXPORT_PATH=apps/share \
       -DQT_VERSION_MAJOR=5 \
-      -DCPM_LOCAL_PACKAGES_ONLY=ON \
       -DQt5DBus_QDBUSXML2CPP_EXECUTABLE=/usr/lib64/qt5/bin/qdbusxml2cpp ..
 %make_build
 
@@ -123,6 +122,14 @@ cd build
 
 
 %changelog
+* Sun Sep 28 2025 LFRon <ronforever@qq.com> - 1.9.13-1
+- feat: add no-clean-objects option for remove command
+- feat: add mirror enable/disable functionality for repositories
+- feat: enable git submodule fetching with environment variable control
+- refactor: simplify container entrypoint generation
+- fix: fix env is cleared by "env -i"
+- Follow the upstream release 1.9.13
+
 * Fri Sep 19 2025 LFRon <ronforever@qq.com> - 1.9.12-1
 - fix: correct no-dbus flag logic
 - Follow the upstream release 1.9.12
