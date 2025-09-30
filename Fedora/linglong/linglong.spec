@@ -8,7 +8,7 @@ URL:            https://gitee.com/LFRon/linyaps-generic-linux
 Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-1.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
-BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel erofs-utils shadow-utils
+BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel
 BuildRequires:  glibc-static libstdc++-static
@@ -16,9 +16,9 @@ BuildRequires:  libcurl-devel openssl-devel libcap-devel
 BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils linglong-box fuse-overlayfs shadow-utils
-Requires:       glib2 shared-mime-info erofs-utils systemd
+Requires:       glib2 shared-mime-info systemd
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts
-Recommends:    erofs-fuse
+Recommends:    erofs-fuse erofs-utils
 
 %description
 Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container powered by Linyaps-box on Linux.
