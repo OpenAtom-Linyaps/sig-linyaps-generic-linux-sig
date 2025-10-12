@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.13
+Version:        1.9.13.2
 Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-1.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-2.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -36,7 +36,7 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-generic-linux-%{version}-1
+%autosetup -p1 -n linyaps-generic-linux-%{version}-2
 
 %define _debugsource_template %{nil}
 
@@ -52,8 +52,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCPM_LOCAL_PACKAGES_ONLY=ON \
       -DENABLE_LINGLONG_INSTALLER=ON \
       -DLINGLONG_EXPORT_PATH=apps/share \
-      -DQT_VERSION_MAJOR=5 \
-      -DQt5DBus_QDBUSXML2CPP_EXECUTABLE=/usr/lib64/qt5/bin/qdbusxml2cpp ..
+      -DQT_VERSION_MAJOR=5 ..
 %make_build
 
 %install
@@ -122,6 +121,10 @@ cd build
 
 
 %changelog
+* Sun Oct 12 2025 LFRon <ronforever@qq.com> - 1.9.13-2
+- feat: add force load extensions by setting env "LL_FORCE_EXTENSION"
+- fix some known bugs
+
 * Sun Sep 28 2025 LFRon <ronforever@qq.com> - 1.9.13-1
 - feat: add no-clean-objects option for remove command
 - feat: add mirror enable/disable functionality for repositories
