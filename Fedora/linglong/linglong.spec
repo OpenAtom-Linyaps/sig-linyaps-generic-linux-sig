@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.13.2
-Release:        1
+Version:        1.9.13
+Release:        2
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
@@ -36,7 +36,7 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-generic-linux-%{version}-2
+%autosetup -p1 -n linyaps-generic-linux-%{version}-%{release}
 
 %define _debugsource_template %{nil}
 
