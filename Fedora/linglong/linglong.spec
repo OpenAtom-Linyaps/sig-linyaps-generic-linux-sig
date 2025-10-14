@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.9.13
-Release:        2
+Release:        3
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-2.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-3.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -121,6 +121,10 @@ cd build
 
 
 %changelog
+* Mon Oct 13 2025 LFRon <ronforever@qq.com> - 1.9.13-3
+- feat: allow load multiple extensions
+- fix some known bugs
+
 * Sun Oct 12 2025 LFRon <ronforever@qq.com> - 1.9.13-2
 - feat: add force load extensions by setting env "LL_FORCE_EXTENSION"
 - fix some known bugs
