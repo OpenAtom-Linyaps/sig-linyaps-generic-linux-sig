@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong-box
-Version:        2.1.0
+Version:        2.1.1
 Release:        1
 Summary:        Linglong sandbox runtime.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-box-linux-generic
-Source0:        https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.0-1.zip
+Source0:        https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.1-1.zip
 
 BuildRequires:  cmake gcc-c++ glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
 Requires:       desktop-file-utils
@@ -16,7 +16,7 @@ Recommends:    erofs-fuse
 Linyaps sandbox with OCI standard.It is used by Linyaps.
 
 %prep
-%autosetup -p1 -n linyaps-box-linux-generic-%{version}-1
+%autosetup -p1 -n linyaps-box-linux-generic-%{version}-%{release}
 
 %define _debugsource_template %{nil}
 
@@ -39,6 +39,9 @@ cd build
 
 
 %changelog
+* Wed Oct 15 2025 LFRon <ronforever@qq.com> - 2.1.1-1
+- Follow the upstream 2.1.1-1
+
 * Thu Sep 4 2025 LFRon <ronforever@qq.com> - 2.1.0-2
 - Follow the upstream 2.1.0-1
 
