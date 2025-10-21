@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.9.13
-Release:        7
+Release:        8
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-7.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-8.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -120,6 +120,9 @@ cd build
 
 
 %changelog
+* Tue Oct 21 2025 LFRon <ronforever@qq.com> - 1.9.13-8
+- feat: Early support for strict sandbox config
+
 * Tue Oct 21 2025 LFRon <ronforever@qq.com> - 1.9.13-7
 - feat: Initial support for env config
 
