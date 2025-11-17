@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.9.13
-Release:        8
+Version:        1.10.2
+Release:        1
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.9.13-8.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.2-1.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -120,6 +120,20 @@ cd build
 
 
 %changelog
+* Mon Nov 17 2025 LFRon <ronforever@qq.com> - 1.10.2-1
+- fix: Duplicate initialization causes incorrect stderr redirection
+- fix: There will be multiple versions of the application when an error occurs during the upgrade process
+- fix: base field is empty when use ll-cli search
+- fix: fix repo config comparison and add debug logs
+- fix: add DBusPrivate to Qt6 find_package
+- feat: still implement loading of extensions from config files
+- feat: Adding process-aware fileLock implementation
+- feat: Disable backtrace by default
+- fix: the application was abnormally removed due to an error in executing hooks
+
+* Mon Nov 10 2025 LFRon <ronforever@qq.com> - 1.9.13-9
+- feat: Fully support xdg-desktop-portal
+
 * Tue Oct 21 2025 LFRon <ronforever@qq.com> - 1.9.13-8
 - feat: Early support for strict sandbox config
 
