@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.10.2
-Release:        1
+Release:        2
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.2-1.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.2-2.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -120,6 +120,9 @@ cd build
 
 
 %changelog
+* Thu Nov 20 2025 LFRon <ronforever@qq.com> - 1.10.2-2
+- fix: Minor fixes
+
 * Mon Nov 17 2025 LFRon <ronforever@qq.com> - 1.10.2-1
 - fix: Duplicate initialization causes incorrect stderr redirection
 - fix: There will be multiple versions of the application when an error occurs during the upgrade process
