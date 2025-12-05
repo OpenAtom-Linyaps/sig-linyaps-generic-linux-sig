@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.10.2
-Release:        2
+Release:        3
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.2-2.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.2-3.zip
 
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -120,6 +120,13 @@ cd build
 
 
 %changelog
+* Fri Dec 5 2025 LFRon <ronforever@qq.com> - 1.10.2-3
+- fix: Minor fixes
+- fix: can't rely on ssi_pid when cross pid_namespaces
+- feat: add jmgpu device node to container bind list
+- fix: replace unsafe temp-dir creation and fix fmt API usage
+- build: add hardend compile/link flags
+
 * Thu Nov 20 2025 LFRon <ronforever@qq.com> - 1.10.2-2
 - fix: Minor fixes
 
