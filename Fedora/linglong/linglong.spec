@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.10.2
-Release:        3
+Release:        5
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
@@ -120,6 +120,9 @@ cd build
 
 
 %changelog
+* Sat Dec 6 2025 LFRon <ronforever@qq.com> - 1.10.2-5
+- feat: implement the control of force-loading extensions and mount-dirs
+
 * Fri Dec 5 2025 LFRon <ronforever@qq.com> - 1.10.2-3
 - fix: Minor fixes
 - fix: can't rely on ssi_pid when cross pid_namespaces
