@@ -57,7 +57,8 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
       -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
       -DQT_VERSION_MAJOR=5 ..
-%make_build
+
+make
 
 %install
 cd build

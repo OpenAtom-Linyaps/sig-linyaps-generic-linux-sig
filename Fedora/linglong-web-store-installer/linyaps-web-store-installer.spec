@@ -26,16 +26,16 @@ ecosystem with OCI standard support.
 %autosetup -p1 -n linyaps-web-store-installer-%{version}
 
 %build
-cmake -B build \
-    -DCMAKE_INSTALL_PREFIX=%{_prefix} \
-    -DQT_VERSION_MAJOR=5 \
-    -DCMAKE_C_COMPILER=clang \
-    -DCMAKE_CXX_COMPILER=clang++ \
-    -DCMAKE_C_FLAGS="-O3 -flto=full" \
-    -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
-    -DCMAKE_BUILD_TYPE=Release
+mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+      -DQT_VERSION_MAJOR=5 \
+      -DCMAKE_C_COMPILER=clang \
+      -DCMAKE_CXX_COMPILER=clang++ \
+      -DCMAKE_C_FLAGS="-O3 -flto=full" \
+      -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
+      -DCMAKE_BUILD_TYPE=Release ..
 
-cmake --build build
+make
 
 %install
 DESTDIR=%{buildroot} cmake --install build

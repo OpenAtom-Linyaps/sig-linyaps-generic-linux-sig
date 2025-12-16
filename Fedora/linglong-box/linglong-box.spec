@@ -31,7 +31,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
       -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
       -Dlinyaps-box_CPM_LOCAL_PACKAGES_ONLY=ON ..
-%make_build
+make
 
 %install
 cd build
