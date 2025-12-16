@@ -1,13 +1,13 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.10.3
-Release:        1
+Release:        2
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
 Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.3-1.zip
 
-BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo
+BuildRequires:  cmake clang llvm gettext intltool systemd-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel
@@ -35,7 +35,7 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-generic-linux-%{version}-%{release}
+%autosetup -p1 -n linyaps-generic-linux-%{version}-1
 
 %define _debugsource_template %{nil}
 
@@ -48,9 +48,14 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DSYSCONF_INSTALL_DIR:PATH=%{_sysconfdir} \
       -DSHARE_INSTALL_PREFIX:PATH=%{_datadir} \
       -DBUILD_SHARED_LIBS=OFF \
+      -DCMAKE_BUILD_TYPE=Release \
       -DCPM_LOCAL_PACKAGES_ONLY=ON \
       -DENABLE_LINGLONG_INSTALLER=ON \
       -DLINGLONG_EXPORT_PATH=apps/share \
+      -DCMAKE_C_COMPILER=clang \
+      -DCMAKE_CXX_COMPILER=clang++ \
+      -DCMAKE_C_FLAGS="-O3 -flto=full" \
+      -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
       -DQT_VERSION_MAJOR=5 ..
 %make_build
 
@@ -120,6 +125,9 @@ cd build
 
 
 %changelog
+* Tue Dec 16 2025 LFRon <ronforever@qq.com> - 1.10.3-2
+- Enable Clang O3+Full-LTO optimization
+
 * Sun Dec 14 2025 LFRon <ronforever@qq.com> - 1.10.3-1
 - bump version 1.10.3
 

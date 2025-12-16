@@ -1,13 +1,13 @@
 %global debug_package %{nil}
 Name:           linglong-box
 Version:        2.1.2
-Release:        1
+Release:        2
 Summary:        Linglong sandbox runtime.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-box-linux-generic
 Source0:        https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.2-1.zip
 
-BuildRequires:  cmake gcc-c++ glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
+BuildRequires:  cmake clang llvm glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
 Requires:       desktop-file-utils
 Requires:       glib2 shared-mime-info erofs-utils
 Recommends:    erofs-fuse
@@ -16,7 +16,7 @@ Recommends:    erofs-fuse
 Linyaps sandbox with OCI standard.It is used by Linyaps.
 
 %prep
-%autosetup -p1 -n linyaps-box-linux-generic-%{version}-%{release}
+%autosetup -p1 -n linyaps-box-linux-generic-%{version}-1
 
 %define _debugsource_template %{nil}
 
@@ -26,6 +26,10 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
       -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_SHARED_LIBS=OFF \
+      -DCMAKE_C_COMPILER=clang \
+      -DCMAKE_CXX_COMPILER=clang++ \
+      -DCMAKE_C_FLAGS="-O3 -flto=full" \
+      -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
       -Dlinyaps-box_CPM_LOCAL_PACKAGES_ONLY=ON ..
 %make_build
 
@@ -39,6 +43,9 @@ cd build
 
 
 %changelog
+* Tue Dec 16 2025 LFRon <ronforever@qq.com> - 2.1.2-2
+- Enable Clang Polly+O3+Full-LTO optimization
+
 * Mon Nov 17 2025 LFRon <ronforever@qq.com> - 2.1.2-1
 - Follow the upstream 2.1.2-1
 

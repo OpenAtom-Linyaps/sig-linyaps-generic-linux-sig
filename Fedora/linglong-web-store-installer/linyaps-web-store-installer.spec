@@ -2,14 +2,14 @@
 %define _enable_debug_package 0
 Name:           linyaps-web-store-installer
 Version:        1.6.8
-Release:        1
+Release:        2
 Summary:        linyaps web store installer
 License:        GPL-3.0-or-later
 URL:            https://gitee.com/LFRon/linyaps-web-store-installer
 Source0:        https://github.com/OpenAtom-Linyaps/linyaps-web-store-installer/archive/refs/tags/1.6.8.zip
 
 BuildRequires:  cmake
-BuildRequires:  gcc-c++
+BuildRequires:  clang llvm
 BuildRequires:  pkgconfig
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  xdg-utils
@@ -29,6 +29,10 @@ ecosystem with OCI standard support.
 cmake -B build \
     -DCMAKE_INSTALL_PREFIX=%{_prefix} \
     -DQT_VERSION_MAJOR=5 \
+    -DCMAKE_C_COMPILER=clang \
+    -DCMAKE_CXX_COMPILER=clang++ \
+    -DCMAKE_C_FLAGS="-O3 -flto=full" \
+    -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
     -DCMAKE_BUILD_TYPE=Release
 
 cmake --build build
@@ -46,6 +50,9 @@ xdg-mime default space.linglong.Installer.desktop x-scheme-handler/og
 %{_datadir}/applications/space.linglong.Installer.desktop
 
 %changelog
+* Tue Dec 16 2025 LFRon <ronforever@qq.com> - 1.6.8-2
+- Enable Clang O3+Full-LTO optimization
+
 * Thu Sep 4 2025 LFRon <ronforever@qq.com> - 1.6.8-1
 - update follow upstream 1.6.8-1
 - compile using Qt5 as default
