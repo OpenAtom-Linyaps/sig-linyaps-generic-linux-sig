@@ -9,7 +9,7 @@ URL:            https://gitee.com/LFRon/linyaps-web-store-installer
 Source0:        https://github.com/OpenAtom-Linyaps/linyaps-web-store-installer/archive/refs/tags/1.6.8.zip
 
 BuildRequires:  cmake
-BuildRequires:  clang llvm
+BuildRequires:  clang llvm llvm-devel
 BuildRequires:  pkgconfig
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  xdg-utils
@@ -33,9 +33,10 @@ cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} \
       -DCMAKE_CXX_COMPILER=clang++ \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
       -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -DCMAKE_BUILD_TYPE=Release ..
 
-make
+make -j$(nproc)
 
 %install
 DESTDIR=%{buildroot} cmake --install build

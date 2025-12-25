@@ -20,7 +20,7 @@ Linglong transform package tools to transform package to linyaps command line to
 %define _debugsource_template %{nil}
 
 %build
-make build
+make build -j$(nproc)
 
 %install
 %make_install INSTALL_ROOT=%{buildroot}
