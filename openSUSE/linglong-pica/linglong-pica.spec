@@ -7,7 +7,7 @@ License: LGPLv3
 URL:     https://github.com/linuxdeepin/linglong-pica
 Source0: https://github.com/linuxdeepin/linglong-pica/archive/refs/heads/master.zip
 
-BuildRequires: golang
+BuildRequires: go clang llvm unzip
 Requires: linglong-box
 Requires: grep jq ostree python3 python3-pyyaml
 Requires: flatpak coreutils zstd

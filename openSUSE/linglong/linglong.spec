@@ -63,9 +63,6 @@ This Linyaps sub-package is a tool that makes it easy to build applications and 
 %define _debugsource_template %{nil}
 
 %build
-# 启用 SUSE 硬化（含 -fPIE / -pie 等）
-# %set_build_flags
-
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_POSITION_INDEPENDENT_CODE=ON  \
@@ -171,7 +168,7 @@ cd build
 
 %changelog
 * Tue Dec 23 2025 Packager <ronforever@qq.com> - 1.10.3-2
-- Add Clang+LLVM support for OpenSUSE 15.6
+- Add Clang+LLVM support for OpenSUSE
 
 * Sat Nov 08 2025 Packager <you@example.com> - 1.9.13-2
 - Adapt spec for openSUSE Leap 15.6:
