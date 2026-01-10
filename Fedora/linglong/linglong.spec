@@ -7,7 +7,7 @@ License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
 Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.3-1.zip
 
-BuildRequires:  cmake clang llvm gettext intltool systemd-devel sudo
+BuildRequires:  cmake clang llvm gettext intltool systemd-devel libuuid-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel
@@ -16,7 +16,7 @@ BuildRequires:  libcurl-devel openssl-devel libcap-devel
 BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils linglong-box fuse-overlayfs shadow-utils
-Requires:       glib2 shared-mime-info systemd
+Requires:       glib2 shared-mime-info systemd uuid
 Recommends:    erofs-fuse erofs-utils google-noto-sans-mono-fonts wqy-zenhei-fonts
 
 %description

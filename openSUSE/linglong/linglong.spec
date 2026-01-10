@@ -8,7 +8,7 @@ URL:            https://gitee.com/LFRon/linyaps-generic-linux
 Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.3-1.zip
 
 # ========== BuildRequires ==========
-BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo unzip
+BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo unzip libuuid-devel
 BuildRequires:  glibc-devel glibc-devel-static
 # 提供 -lc/-lm 链接脚本
 
@@ -30,9 +30,9 @@ Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils linglong-box fuse-overlayfs
 # shadow 在 SUSE，shadow-utils 在其他
 %if 0%{?suse_version}
-Requires:       shadow
+Requires:       shadow libuuid1
 %else
-Requires:       shadow-utils
+Requires:       shadow-utils uuid
 %endif
 Requires:       glib2 shared-mime-info systemd
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts
