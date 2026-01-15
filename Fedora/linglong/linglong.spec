@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.10.3
-Release:        2
+Version:        1.10.4
+Release:        0
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.3-1.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.4-0.zip
 
 BuildRequires:  cmake clang llvm gettext intltool systemd-devel libuuid-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -35,7 +35,7 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-generic-linux-%{version}-1
+%autosetup -p1 -n linyaps-generic-linux-%{version}-%{release}
 
 %define _debugsource_template %{nil}
 
@@ -127,6 +127,9 @@ cd build
 
 
 %changelog
+* Thu Jan 15 2026 LFRon <ronforever@qq.com> - 1.10.4-0
+- Enable experimental NVIDIA Graphic driver loading from local
+
 * Tue Dec 16 2025 LFRon <ronforever@qq.com> - 1.10.3-2
 - Enable Clang O3+Full-LTO optimization
 

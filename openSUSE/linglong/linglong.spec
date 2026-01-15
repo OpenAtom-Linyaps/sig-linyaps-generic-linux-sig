@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.10.3
-Release:        2
+Version:        1.10.4
+Release:        0
 Summary:        Linglong package manager for Linux
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.3-1.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.4-0.zip
 
 # ========== BuildRequires ==========
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo unzip libuuid-devel
@@ -58,7 +58,7 @@ Requires:       linglong-box linglong-bin = %{version}-%{release} git
 This Linyaps sub-package is a tool that makes it easy to build applications and dependencies.
 
 %prep
-%autosetup -p1 -n linyaps-generic-linux-%{version}-1
+%autosetup -p1 -n linyaps-generic-linux-%{version}-%{release}
 
 %define _debugsource_template %{nil}
 
