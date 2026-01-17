@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.10.4
-Release:        0
+Version:        1.11.0
+Release:        2
 Summary:        Linglong is a Package Manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.10.4-0.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.0-2.zip
 
 BuildRequires:  cmake clang llvm gettext intltool systemd-devel libuuid-devel sudo
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
@@ -127,6 +127,21 @@ cd build
 
 
 %changelog
+* Sat Jan 17 2026 LFRon <ronforever@qq.com> - 1.11.0-2
+- fix: Linyaps Apps cannot passthrough IPC system
+
+* Fri Jan 16 2026 LFRon <ronforever@qq.com> - 1.11.0-1
+- fix: NVIDIA driver fallback cause ll-builder cannot work
+- feat: Follow extension force-load by upstream
+- bump version 1.11.0-1
+
+* Fri Jan 16 2026 LFRon <ronforever@qq.com> - 1.10.4-2
+- revert: Turn off NVIDIA graphic driver loading from local.
+
+* Thu Jan 15 2026 LFRon <ronforever@qq.com> - 1.10.4-1
+- Merge extension loading policy from upstream
+- Fix ll-builder cannot work
+
 * Thu Jan 15 2026 LFRon <ronforever@qq.com> - 1.10.4-0
 - Enable experimental NVIDIA Graphic driver loading from local
 
