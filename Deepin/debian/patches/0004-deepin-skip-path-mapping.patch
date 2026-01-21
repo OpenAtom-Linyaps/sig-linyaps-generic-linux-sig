@@ -1,0 +1,18 @@
+Index: linyaps/libs/linglong/src/linglong/cli/cli.cpp
+===================================================================
+--- linyaps.orig/libs/linglong/src/linglong/cli/cli.cpp
++++ linyaps/libs/linglong/src/linglong/cli/cli.cpp
+@@ -1744,2 +1744,13 @@
+     auto targetStr = target.string();
++    // Do not map files in the following directories, which are already mounted in the container
++    std::vector<std::string> skipMappingPaths{ "/media/",
++                                               "/usr/share/icons/",
++                                               "/usr/share/fonts/",
++                                               "/usr/share/wallpapers/",
++                                               "/usr/share/themes/" };
++    for (const auto &path : skipMappingPaths) {
++        if (targetStr.rfind(path, 0) == 0) {
++            return targetStr;
++        }
++    }
+     auto relative = std::filesystem::path{ target }.lexically_relative("/");

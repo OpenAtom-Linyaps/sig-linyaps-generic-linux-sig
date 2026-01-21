@@ -1,0 +1,15 @@
+Index: linyaps/misc/share/linglong/export-dirs.json
+===================================================================
+--- linyaps.orig/misc/share/linglong/export-dirs.json
++++ linyaps/misc/share/linglong/export-dirs.json
+@@ -8,6 +8,9 @@
+         "share/appdata",
+         "share/metainfo",
+         "share/plugins",
+-        "share/templates"
++        "share/templates",
++        "share/deepin-manual",
++        "share/deepin-elf-verify",
++        "share/dsg"
+     ]
+ }

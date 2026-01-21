@@ -1,0 +1,16 @@
+Index: linyaps/libs/oci-cfg-generators/src/linglong/oci-cfg-generators/container_cfg_builder.cpp
+===================================================================
+--- linyaps.orig/libs/oci-cfg-generators/src/linglong/oci-cfg-generators/container_cfg_builder.cpp
++++ linyaps/libs/oci-cfg-generators/src/linglong/oci-cfg-generators/container_cfg_builder.cpp
+@@ -390,6 +390,11 @@ ContainerCfgBuilder &ContainerCfgBuilder
+         "/usr/share/icons",
+         "/usr/share/themes",
+         "/var/cache/fontconfig",
++        "/usr/share/wallpapers",
++        "/usr/share/music",
++        "/usr/share/extensions-from-app-store",
++        "/usr/share/dsg",
++        "/usr/share/deepin/distribution.info"
+     };
+ 
+     hostStaticsMount = std::vector<Mount>{};

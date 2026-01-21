@@ -1,0 +1,39 @@
+Index: linyaps/misc/CMakeLists.txt
+===================================================================
+--- linyaps.orig/misc/CMakeLists.txt
++++ linyaps/misc/CMakeLists.txt
+@@ -43,6 +43,7 @@ configure_files(
+   lib/systemd/system-preset/91-linglong.preset
+   lib/systemd/user-generators/linglong-user-systemd-generator
+   lib/systemd/user/linglong-session-helper.service
++  lib/systemd/user/cn.org.linyaps.preloader.service
+   lib/sysusers.d/linglong.conf
+   lib/tmpfiles.d/linglong.conf
+   script/linglong.sh
+Index: linyaps/misc/lib/systemd/user/cn.org.linyaps.preloader.service
+===================================================================
+--- /dev/null
++++ linyaps/misc/lib/systemd/user/cn.org.linyaps.preloader.service
+@@ -0,0 +1,22 @@
++# SPDX-FileCopyrightText: 2025 UnionTech Software Technology Co., Ltd.
++#
++# SPDX-License-Identifier: LGPL-3.0-or-later
++
++# This systemd service is used to preload Dtk and Qt libraries into the page cache,
++# so some linyaps applications that use these libraries will start faster on their first launch
++
++[Unit]
++Description=Linyaps application preloader
++After=graphical-session.target
++PartOf=graphical-session.target
++BindsTo=graphical-session.target
++
++[Service]
++Type=oneshot
++ExecStartPre=/usr/bin/sleep 30s
++ExecStart=ll-cli run cn.org.linyaps.preloader
++Slice=app.slice
++RemainAfterExit=yes
++
++[Install]
++WantedBy=graphical-session.target

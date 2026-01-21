@@ -1,0 +1,45 @@
+Index: linyaps/libs/linglong/src/linglong/repo/ostree_repo.cpp
+===================================================================
+--- linyaps.orig/libs/linglong/src/linglong/repo/ostree_repo.cpp
++++ linyaps/libs/linglong/src/linglong/repo/ostree_repo.cpp
+@@ -1271,6 +1271,21 @@ utils::error::Result<void> OSTreeRepo::p
+     return LINGLONG_OK;
+ }
+ 
++// 执行apt-config 获取 apt token配置
++utils::error::Result<std::string> getAptToken() noexcept
++{
++    LINGLONG_TRACE("get apt token");
++    auto aptToken = utils::Cmd("sh").exec({
++      "-c",
++      "eval `apt-config shell Token Acquire::SmartMirrors::Token`; echo $Token",
++    });
++
++    if (!aptToken) {
++        return LINGLONG_ERR(aptToken);
++    }
++    return *aptToken;
++}
++
+ // 初始化一个GVariantBuilder
+ GVariantBuilder OSTreeRepo::initOStreePullOptions(const std::string &ref) noexcept
+ {
+@@ -1291,6 +1306,18 @@ GVariantBuilder OSTreeRepo::initOStreePu
+                           "{s@v}",
+                           "refs",
+                           g_variant_new_variant(g_variant_new_strv(refs.data(), -1)));
++    auto token = getAptToken();
++    if (!token) {
++        qWarning() << "get apt token error: " << token.error().message();
++    } else {
++        GVariantBuilder hdr_builder;
++        g_variant_builder_init(&hdr_builder, G_VARIANT_TYPE("a(ss)"));
++        g_variant_builder_add(&hdr_builder, "(ss)", "X-Repo-Token", token->c_str());
++        g_variant_builder_add(&builder,
++                              "{s@v}",
++                              "http-headers",
++                              g_variant_new_variant(g_variant_builder_end(&hdr_builder)));
++    }
+     return builder;
+ }
+ 
