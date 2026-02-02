@@ -1,39 +1,38 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.11.0
+Version:        1.11.1
 Release:        2
 Summary:        Linglong package manager for Linux
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.0-2.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.1-2.zip
 
 # ========== BuildRequires ==========
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo unzip libuuid-devel
 BuildRequires:  glibc-devel glibc-devel-static
-# 提供 -lc/-lm 链接脚本
 
-%if 0%{?suse_version}
-BuildRequires:  libqt5-qtbase-devel
-BuildRequires:  clang llvm llvm-devel pkgconf-pkg-config
+# 处理Qt编译版本, OpenSUSE风滚草使用Qt6编译
+# 反之使用Qt5编译
+%if 0%{?suse_version} > 1600
+%define distro_use_qt_ver 6
+BuildRequires:  qt6-base-devel
 %else
-BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel libqt5-qtbase-devel clang llvm llvm-devel
+%define distro_use_qt_ver 5
+BuildRequires:  libqt5-qtbase-devel
 %endif
 
+BuildRequires:  clang llvm llvm-devel pkgconf-pkg-config
 BuildRequires:  glib2-devel nlohmann_json-devel ostree-devel yaml-cpp-devel libcap-devel
-# 如不需要单测，建议去掉这两行；要保留测试则按你仓库可用性决定
-# BuildRequires:  gtest gmock
+BuildRequires:  gtest gmock
 BuildRequires:  libseccomp-devel libelf-devel
 BuildRequires:  libcurl-devel openssl-devel unzip
 
 # ========== Runtime Requires ==========
 Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils linglong-box fuse-overlayfs
+
 # shadow 在 SUSE，shadow-utils 在其他
-%if 0%{?suse_version}
 Requires:       shadow libuuid1
-%else
-Requires:       shadow-utils uuid
-%endif
 Requires:       glib2 shared-mime-info systemd
 Requires:       google-noto-sans-mono-fonts wqy-zenhei-fonts
 Recommends:     erofs-fuse erofs-utils
@@ -63,6 +62,7 @@ This Linyaps sub-package is a tool that makes it easy to build applications and 
 %define _debugsource_template %{nil}
 
 %build
+echo "INFO: 当前OpenSUSE版本号为: %{?suse_version}"
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_POSITION_INDEPENDENT_CODE=ON  \
@@ -75,11 +75,11 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DENABLE_LINGLONG_INSTALLER=ON \
       -DLINGLONG_EXPORT_PATH=apps/share \
       -DCMAKE_BUILD_TYPE=Release \
-      -DQT_VERSION_MAJOR=5 \
       -DCMAKE_C_COMPILER=clang \
       -DCMAKE_CXX_COMPILER=clang++ \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
-      -DCMAKE_CXX_FLAGS="-O3 -flto=full" ..
+      -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
+      -DQT_VERSION_MAJOR=%{distro_use_qt_ver} ..
 
 make -j$(nproc)
 
@@ -168,6 +168,20 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Sat Jan 31 2026 LFRon <ronforever@qq.com> - 1.11.1-2
+- feat: Improve NVIDIA Linux driver passthrough
+- fix: Do not unbind host rootfs as default
+- revert: tray icon rewrite
+
+* Tue Jan 27 2026 LFRon <ronforever@qq.com> - 1.11.1-1
+- feat: Follow 1.11.1 update upstream
+- feat: Improve the tray icon loader
+- feat: Improve NVIDIA Linux driver passthrough
+
+* Sun Jan 18 2026 LFRon <ronforever@qq.com> - 1.11.0-3
+- fix: Known issues
+- fix: follow extension config by upstream
+
 * Sat Jan 17 2026 LFRon <ronforever@qq.com> - 1.11.0-2
 - fix: Linyaps Apps cannot passthrough IPC system
 

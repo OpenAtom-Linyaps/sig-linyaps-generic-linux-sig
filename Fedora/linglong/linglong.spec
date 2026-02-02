@@ -1,16 +1,25 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.11.0
+Version:        1.11.1
 Release:        2
-Summary:        Linglong is a Package Manager on Linux.
+Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.0-2.zip
+Source0:        https://github.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.1-2.zip
+
+# 处理Qt编译版本, RPM新发行版使用Qt6编译
+# 反之使用Qt5编译
+%if 0%{?fedora} >= 43
+%define distro_use_qt_ver 6
+BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
+%else
+%define distro_use_qt_ver 5
+BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
+%endif
 
 BuildRequires:  cmake clang llvm gettext intltool systemd-devel libuuid-devel sudo
-BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel shadow-utils
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
-BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel
+BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel shadow-utils
 BuildRequires:  glibc-static libstdc++-static
 BuildRequires:  libcurl-devel openssl-devel libcap-devel
 BuildRequires:  gtest-devel gmock-devel
@@ -56,7 +65,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_CXX_COMPILER=clang++ \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
       -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
-      -DQT_VERSION_MAJOR=5 ..
+      -DQT_VERSION_MAJOR=%{distro_use_qt_ver} ..
 
 make -j$(nproc)
 
@@ -112,7 +121,6 @@ cd build
 %{_datadir}/applications/*
 %{_datadir}/locale/*
 
-
 %files -n linglong-builder
 %{_bindir}/ll-builder
 %{_libexecdir}/%{name}/fetch-dsc-source
@@ -127,6 +135,20 @@ cd build
 
 
 %changelog
+* Sat Jan 31 2026 LFRon <ronforever@qq.com> - 1.11.1-2
+- feat: Improve NVIDIA Linux driver passthrough
+- fix: Do not unbind host rootfs as default
+- revert: tray icon rewrite
+
+* Tue Jan 27 2026 LFRon <ronforever@qq.com> - 1.11.1-1
+- feat: Follow 1.11.1 update upstream
+- feat: Improve the tray icon loader
+- feat: Improve NVIDIA Linux driver passthrough
+
+* Sun Jan 18 2026 LFRon <ronforever@qq.com> - 1.11.0-3
+- fix: Known issues
+- fix: follow extension config by upstream
+
 * Sat Jan 17 2026 LFRon <ronforever@qq.com> - 1.11.0-2
 - fix: Linyaps Apps cannot passthrough IPC system
 
