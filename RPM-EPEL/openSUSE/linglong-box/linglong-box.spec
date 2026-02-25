@@ -23,7 +23,7 @@ BuildRequires:  pkgconf pkgconf-pkg-config
 
 Requires:       desktop-file-utils
 Requires:       libglib-2_0-0 shared-mime-info erofs-utils
-Recommends:     erofs-fuse
+Recommends:     erofs-fuse linglong-selinux
 
 %description
 Linyaps sandbox with OCI standard.It is used by Linyaps.

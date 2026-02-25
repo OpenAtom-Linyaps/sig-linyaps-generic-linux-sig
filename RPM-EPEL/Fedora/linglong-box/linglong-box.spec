@@ -10,7 +10,7 @@ Source0:        https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/
 BuildRequires:  cmake clang llvm glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
 Requires:       desktop-file-utils
 Requires:       glib2 shared-mime-info erofs-utils
-Recommends:    erofs-fuse
+Recommends:    erofs-fuse linglong-selinux
 
 %description
 Linyaps sandbox with OCI standard.It is used by Linyaps.
