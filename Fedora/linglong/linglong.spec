@@ -1,23 +1,21 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.11.3
-Release:        2
+Release:        3
 Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.3-2.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.3-3.tar.gz
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
-#%if 0%{?fedora} >= 43
-#%define distro_use_qt_ver 6
-#BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
-#%else
-#%define distro_use_qt_ver 5
-#BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
-#%endif
-
+%if 0%{?fedora} >= 43
+%define distro_use_qt_ver 6
+BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
+%else
+%define distro_use_qt_ver 5
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
+%endif
 
 BuildRequires:  cmake clang llvm lld gettext intltool systemd-devel libuuid-devel sudo
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
@@ -137,6 +135,9 @@ cd build
 
 
 %changelog
+* Wed Feb 25 2026 LFRon <ronforever@qq.com> - 1.11.3-3
+- disable xdg-desktop-portal func
+
 * Wed Feb 25 2026 LFRon <ronforever@qq.com> - 1.11.3-2
 - delete other changes
 
