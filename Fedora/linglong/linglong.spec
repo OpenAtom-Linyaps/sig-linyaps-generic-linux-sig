@@ -9,13 +9,15 @@ Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
-%if 0%{?fedora} >= 43
-%define distro_use_qt_ver 6
-BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
-%else
-%define distro_use_qt_ver 5
+#%if 0%{?fedora} >= 43
+#%define distro_use_qt_ver 6
+#BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
+#%else
+#%define distro_use_qt_ver 5
+#BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
+#%endif
+
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
-%endif
 
 BuildRequires:  cmake clang llvm lld gettext intltool systemd-devel libuuid-devel sudo
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
@@ -65,7 +67,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_CXX_COMPILER=clang++ \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
       -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
-      -DQT_VERSION_MAJOR=%{distro_use_qt_ver} ..
+      -DQT_VERSION_MAJOR=5 ..
 
 make -j$(nproc)
 
