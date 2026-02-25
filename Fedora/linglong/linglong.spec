@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.11.3
-Release:        1
+Release:        2
 Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.3-1.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.3-2.tar.gz
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
@@ -17,7 +17,7 @@ BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
 %endif
 
-BuildRequires:  cmake clang llvm gettext intltool systemd-devel libuuid-devel sudo
+BuildRequires:  cmake clang llvm lld gettext intltool systemd-devel libuuid-devel sudo
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel shadow-utils
 BuildRequires:  glibc-static libstdc++-static
@@ -135,6 +135,9 @@ cd build
 
 
 %changelog
+* Wed Feb 25 2026 LFRon <ronforever@qq.com> - 1.11.3-2
+- delete other changes
+
 * Wed Feb 11 2026 LFRon <ronforever@qq.com> - 1.11.3-1
 - follow OpenAtom-Linyaps 1.11.3-1 upstream
 
