@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.11.4
-Release:        0
+Version:        1.12.0
+Release:        1
 Summary:        Linglong package manager for Linux
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.11.4-0.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.0-1.tar.gz
 
 # ========== BuildRequires ==========
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo unzip libuuid-devel
@@ -35,7 +35,7 @@ Requires:       desktop-file-utils linglong-box fuse-overlayfs
 Requires:       shadow libuuid1
 Requires:       glib2 shared-mime-info systemd
 Requires:       google-noto-sans-mono-fonts
-Recommends:     erofs-fuse erofs-utils wqy-zenhei-fonts wqy-microhei-fonts
+Recommends:     linglong-selinux erofs-fuse erofs-utils wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
 Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container powered by Linyaps-box on Linux.
@@ -79,6 +79,9 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DCMAKE_CXX_COMPILER=clang++ \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
       -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
+      -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld" \
+      -DCMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld" \
+      -DCMAKE_MODULE_LINKER_FLAGS="-fuse-ld=lld" \
       -DQT_VERSION_MAJOR=%{distro_use_qt_ver} ..
 
 make -j$(nproc)
@@ -151,6 +154,7 @@ cd build
 %{_datadir}/%{name}/export-dirs.json
 %{_datadir}/mime/packages/*
 %{_datadir}/zsh/*
+%{_datadir}/fish/*
 %{_datadir}/icons/*
 %{_datadir}/applications/*
 %{_datadir}/locale/*
@@ -168,6 +172,10 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Tue Mar 17 2026 LFRon <ronforever@qq.com> - 1.12.0-1
+- Follow OpenAtom-Linyaps upstream
+- update NVIDIA driver fallback function
+
 * Thu Feb 26 2026 LFRon <ronforever@qq.com> - 1.11.4-0
 - Follow OpenAtom-Linyaps upstream
 - update NVIDIA driver fallback function

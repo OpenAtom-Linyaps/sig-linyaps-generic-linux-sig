@@ -33,6 +33,9 @@ cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} \
       -DCMAKE_CXX_COMPILER=clang++ \
       -DCMAKE_C_FLAGS="-O3 -flto=full" \
       -DCMAKE_CXX_FLAGS="-O3 -flto=full" \
+      -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld" \
+      -DCMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld" \
+      -DCMAKE_MODULE_LINKER_FLAGS="-fuse-ld=lld" \
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -DCMAKE_BUILD_TYPE=Release ..
 
