@@ -7,7 +7,7 @@ License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-box-linux-generic
 Source0:        https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.2-1.zip
 
-BuildRequires:  cmake clang llvm glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel
+BuildRequires:  cmake clang llvm glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel lld
 Requires:       desktop-file-utils
 Requires:       glib2 shared-mime-info erofs-utils
 Recommends:    erofs-fuse linglong-selinux

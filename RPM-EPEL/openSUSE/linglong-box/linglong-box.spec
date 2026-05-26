@@ -8,7 +8,7 @@ URL:            https://gitee.com/LFRon/linyaps-box-linux-generic
 Source0:        https://github.com/LFRon/linyaps-box-linux-generic/archive/refs/tags/2.1.2-1.zip
 
 BuildRequires:  cmake unzip
-BuildRequires:  clang
+BuildRequires:  clang lld
 BuildRequires:  llvm
 BuildRequires:  llvm-devel
 BuildRequires:  glib2-devel
