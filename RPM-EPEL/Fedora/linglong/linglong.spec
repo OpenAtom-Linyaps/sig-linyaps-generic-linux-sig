@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.12.2
-Release:        1
+Version:        1.12.5
+Release:        0
 Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.2-1.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.5-0.tar.gz
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
@@ -91,6 +91,8 @@ cd build
 %exclude %{_libdir}/cmake/linglong-*/*.cmake
 
 %files -n linglong-bin
+%doc README.md
+%license LICENSE
 %{_sysconfdir}/profile.d/*
 %{_sysconfdir}/X11/Xsession.d/*
 %{_bindir}/ll-cli
@@ -113,19 +115,20 @@ cd build
 %{_libexecdir}/%{name}/ll-driver-detect
 %{_libexecdir}/%{name}/dialog/99-linglong-permission
 %{_datadir}/bash-completion/completions/ll-cli
+%{_datadir}/zsh/vendor-completions/_ll-cli
 %{_datadir}/dbus-1/system-services/*.service
 %{_datadir}/dbus-1/system.d/*.conf
 %{_datadir}/polkit-1/actions/org.deepin.linglong.PackageManager1.policy
 %{_datadir}/%{name}/config.yaml
 %{_datadir}/%{name}/export-dirs.json
 %{_datadir}/mime/packages/*
-%{_datadir}/zsh/*
-%{_datadir}/fish/*
-%{_datadir}/icons/*
-%{_datadir}/applications/*
 %{_datadir}/locale/*
+%{_datadir}/applications/*
+%{_datadir}/icons/*
+%{_datadir}/fish/vendor_completions.d/ll-cli.fish
 
 %files -n linglong-builder
+%license LICENSE
 %{_bindir}/ll-builder
 %{_libexecdir}/%{name}/fetch-dsc-source
 %{_libexecdir}/%{name}/fetch-git-source
@@ -134,11 +137,16 @@ cd build
 %{_libexecdir}/%{name}/app-conf-generator
 %{_libexecdir}/%{name}/builder/helper/*.sh
 %{_datadir}/bash-completion/completions/ll-builder
+%{_datadir}/zsh/vendor-completions/_ll-builder
+%{_datadir}/fish/vendor_completions.d/ll-builder.fish
 %{_datadir}/%{name}/builder/templates/*.yaml
 %{_datadir}/%{name}/builder/uab/*
 
-
 %changelog
+* Tue May 26 2026 LFRon <ronforever@qq.com> - 1.12.5-0
+- Follow OpenAtom-Linyaps upstream
+- Add NVIDIA CDI function
+
 * Thu Apr 16 2026 LFRon <ronforever@qq.com> - 1.12.2-1
 - Follow OpenAtom-Linyaps upstream
 - update NVIDIA driver fallback function
