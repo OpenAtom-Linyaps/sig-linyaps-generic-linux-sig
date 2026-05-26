@@ -21,7 +21,7 @@ BuildRequires:  qt6-base-devel
 BuildRequires:  libqt5-qtbase-devel
 %endif
 
-BuildRequires:  clang llvm llvm-devel pkgconf-pkg-config
+BuildRequires:  clang lld llvm llvm-devel pkgconf-pkg-config
 BuildRequires:  glib2-devel nlohmann_json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest gmock
 BuildRequires:  libseccomp-devel libelf-devel
