@@ -177,6 +177,10 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Sat May 30 2026 LFRon <ronforever@qq.com> - 1.12.5-1
+- Follow OpenAtom-Linyaps upstream
+- Add NVIDIA driver fallback
+
 * Tue May 26 2026 LFRon <ronforever@qq.com> - 1.12.5-0
 - Follow OpenAtom-Linyaps upstream
 - Add NVIDIA CDI function

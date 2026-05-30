@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.12.5
-Release:        0
+Release:        1
 Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.5-0.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.5-1.tar.gz
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
@@ -143,6 +143,10 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Sat May 30 2026 LFRon <ronforever@qq.com> - 1.12.5-1
+- Follow OpenAtom-Linyaps upstream
+- Add NVIDIA driver fallback
+
 * Tue May 26 2026 LFRon <ronforever@qq.com> - 1.12.5-0
 - Follow OpenAtom-Linyaps upstream
 - Add NVIDIA CDI function
