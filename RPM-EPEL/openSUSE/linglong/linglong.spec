@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.12.5
-Release:        0
+Release:        2
 Summary:        Linglong package manager for Linux
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.5-0.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.5-2.tar.gz
 
 # ========== BuildRequires ==========
 BuildRequires:  cmake gcc-c++ gettext intltool systemd-devel sudo unzip libuuid-devel
@@ -177,6 +177,9 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Sun May 31 2026 LFRon <ronforever@qq.com> - 1.12.5-2
+- fix NVIDIA driver fallback
+
 * Sat May 30 2026 LFRon <ronforever@qq.com> - 1.12.5-1
 - Follow OpenAtom-Linyaps upstream
 - Add NVIDIA driver fallback
