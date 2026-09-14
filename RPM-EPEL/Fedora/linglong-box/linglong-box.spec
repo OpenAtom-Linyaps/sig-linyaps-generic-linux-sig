@@ -16,7 +16,7 @@ Recommends:     linglong-selinux erofs-fuse
 Linyaps sandbox with OCI standard.It is used by Linyaps.
 
 %prep
-%autosetup -p1 -n linyaps-box-linux-generic-master
+%autosetup -p1 -n linyaps-box-master
 
 %define _debugsource_template %{nil}
 
