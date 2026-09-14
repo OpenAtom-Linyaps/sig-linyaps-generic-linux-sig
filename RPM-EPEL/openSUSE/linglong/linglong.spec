@@ -35,7 +35,7 @@ Requires:       desktop-file-utils linglong-box fuse-overlayfs
 Requires:       shadow libuuid1
 Requires:       glib2 shared-mime-info systemd
 Requires:       google-noto-sans-mono-fonts
-Recommends:     linglong-selinux erofs-fuse erofs-utils wqy-zenhei-fonts wqy-microhei-fonts
+Recommends:     erofs-fuse erofs-utils wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
 Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container powered by Linyaps-box on Linux.
