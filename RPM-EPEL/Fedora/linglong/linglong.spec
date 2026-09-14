@@ -17,7 +17,7 @@ BuildRequires:  qt6-qtbase-devel qt6-qtbase-private-devel
 BuildRequires:  qt5-qtbase-devel qt5-qtbase-private-devel
 %endif
 
-BuildRequires:  cmake clang llvm lld gettext intltool systemd-devel libuuid-devel sudo
+BuildRequires:  git cmake clang llvm lld gettext intltool systemd-devel libuuid-devel sudo
 BuildRequires:  glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel libcap-devel
 BuildRequires:  gtest-devel libseccomp-devel elfutils-libelf-devel shadow-utils
 BuildRequires:  glibc-static libstdc++-static

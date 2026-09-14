@@ -14,6 +14,7 @@ BuildRequires:  llvm-devel
 BuildRequires:  glib2-devel
 BuildRequires:  glibc-devel glibc-devel-static
 BuildRequires:  systemd-devel libstdc++-devel
+BuildRequires:  git 
 BuildRequires:  gtest
 BuildRequires:  gmock 
 BuildRequires:  libseccomp-devel
