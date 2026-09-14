@@ -139,6 +139,9 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Mon Sep 14 2026 LFRon <ronforever@qq.com> - 1.15.0-0
+- Follow OpenAtom-Linyaps upstream
+
 * Sun May 31 2026 LFRon <ronforever@qq.com> - 1.12.5-3
 - fix NVIDIA driver fallback
 
