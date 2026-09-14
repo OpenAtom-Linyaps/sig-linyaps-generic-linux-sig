@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
-Version:        1.12.5
-Release:        3
+Version:        1.15.0
+Release:        0
 Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.12.5-3.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.15.0-0.tar.gz
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
@@ -26,7 +26,7 @@ BuildRequires:  gtest-devel gmock-devel
 Requires:       linglong-bin = %{version}-%{release}
 Requires:       desktop-file-utils linglong-box fuse-overlayfs shadow-utils
 Requires:       glib2 shared-mime-info systemd uuid
-Recommends:     linglong-selinux erofs-fuse erofs-utils google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
+Recommends:     erofs-fuse erofs-utils google-noto-sans-mono-fonts wqy-zenhei-fonts wqy-microhei-fonts
 
 %description
 Linyaps is a secondary package manager on Linux.It could run apps with stable and fast container powered by Linyaps-box on Linux.
@@ -103,17 +103,13 @@ cd build
 %{_prefix}/lib/tmpfiles.d/*.conf
 %{_prefix}/lib/systemd/system/*.service
 %{_prefix}/lib/systemd/system-preset/*.preset
-%{_prefix}/lib/systemd/user/*
 %{_prefix}/lib/systemd/system-environment-generators/*
 %{_prefix}/lib/systemd/user-generators/*
 %{_libexecdir}/%{name}/ll-package-manager
-%{_libexecdir}/%{name}/ll-session-helper
 %{_libexecdir}/%{name}/ld-cache-generator
 %{_libexecdir}/%{name}/font-cache-generator
-%{_libexecdir}/%{name}/ll-dialog
 %{_libexecdir}/%{name}/ll-init
 %{_libexecdir}/%{name}/ll-driver-detect
-%{_libexecdir}/%{name}/dialog/99-linglong-permission
 %{_datadir}/bash-completion/completions/ll-cli
 %{_datadir}/zsh/vendor-completions/_ll-cli
 %{_datadir}/dbus-1/system-services/*.service
