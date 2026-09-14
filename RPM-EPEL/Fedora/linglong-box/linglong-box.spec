@@ -7,8 +7,8 @@ License:        LGPL v3
 URL:            https://github.com/OpenAtom-Linyaps/linyaps-box
 Source0:        https://github.com/OpenAtom-Linyaps/linyaps-box/archive/refs/heads/master.zip
 
-BuildRequires:  cmake clang llvm glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel lld
-Requires:       desktop-file-utils
+BuildRequires:  cmake clang llvm glib2-devel glibc-static libstdc++-static gtest-devel gmock-devel libseccomp-devel libcap-devel lld systemd-devel
+Requires:       desktop-file-utils systemd
 Requires:       glib2 shared-mime-info erofs-utils
 Recommends:     linglong-selinux erofs-fuse
 

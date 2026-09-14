@@ -13,7 +13,7 @@ BuildRequires:  llvm
 BuildRequires:  llvm-devel
 BuildRequires:  glib2-devel
 BuildRequires:  glibc-devel glibc-devel-static
-BuildRequires:  libstdc++-devel
+BuildRequires:  systemd-devel libstdc++-devel
 BuildRequires:  gtest
 BuildRequires:  gmock 
 BuildRequires:  libseccomp-devel
@@ -21,7 +21,7 @@ BuildRequires:  libcap-devel
 BuildRequires:  libattr-devel
 BuildRequires:  pkgconf pkgconf-pkg-config
 
-Requires:       desktop-file-utils
+Requires:       desktop-file-utils systemd
 Requires:       libglib-2_0-0 shared-mime-info erofs-utils
 Recommends:     erofs-fuse linglong-selinux
 
