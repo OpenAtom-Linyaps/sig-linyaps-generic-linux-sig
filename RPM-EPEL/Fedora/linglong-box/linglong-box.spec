@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 Name:           linglong-box
-Version:        2.3.3
-Release:        1
+Version:        2.3.6
+Release:        0
 Summary:        Linglong sandbox runtime.
 License:        LGPL v3
 URL:            https://github.com/OpenAtom-Linyaps/linyaps-box
@@ -28,8 +28,8 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DBUILD_SHARED_LIBS=OFF \
       -DCMAKE_C_COMPILER=clang \
       -DCMAKE_CXX_COMPILER=clang++ \
-      -DCMAKE_C_FLAGS="-O3 -flto" \
-      -DCMAKE_CXX_FLAGS="-O3 -flto" \
+      -DCMAKE_C_FLAGS="-flto" \
+      -DCMAKE_CXX_FLAGS="-flto" \
       -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld" \
       -DCMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld" \
       -DCMAKE_MODULE_LINKER_FLAGS="-fuse-ld=lld" \
@@ -45,6 +45,10 @@ cd build
 %{_bindir}/ll-box
 
 %changelog
+* Thu Oct 22 2026 LFRon <ronforever@qq.com> - 2.3.6-0
+- Follow the upstream master branch
+- Disable LLVM -O3 build flag
+
 * Mon Sep 14 2026 LFRon <ronforever@qq.com> - 2.3.3-1
 - Follow the upstream master branch
 
