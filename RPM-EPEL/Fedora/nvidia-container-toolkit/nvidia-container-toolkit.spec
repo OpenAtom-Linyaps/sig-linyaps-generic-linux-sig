@@ -12,7 +12,7 @@
 
 Name:           nvidia-container-toolkit
 Version:        1.20.1
-Release:        1
+Release:        2
 Summary:        NVIDIA Container Toolkit
 License:        Apache-2.0 AND BSD-3-Clause AND GPL-3.0-or-later AND LGPL-3.0-or-later AND MIT AND GPL-2.0-only
 URL:            https://github.com/NVIDIA/nvidia-container-toolkit
@@ -218,8 +218,10 @@ This package contains the debugging symbols for the library.
 %files -n libnvidia-container1-debuginfo
 %{_prefix}/lib/debug%{_libdir}/libnvidia-container.so.*
 
-%post -n libnvidia-container1 -p /sbin/ldconfig
-%postun -n libnvidia-container1 -p /sbin/ldconfig
+# ldconfig is run automatically by glibc's RPM file triggers on Fedora, so no
+# explicit %post/%postun -p /sbin/ldconfig scriptlets are needed here.
+# (A comment placed directly after a "-p" scriptlet becomes that scriptlet's
+# body, which makes rpm run "ldconfig <tempfile> 0" and fail on erase.)
 
 # ============================================================================
 # The BASE package consists of the NVIDIA Container Runtime and the NVIDIA
