@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.15.0
-Release:        0
+Release:        1
 Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.15.0-0.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.15.0-1.tar.gz
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
@@ -63,8 +63,8 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
       -DLINGLONG_EXPORT_PATH=apps/share \
       -DCMAKE_C_COMPILER=clang \
       -DCMAKE_CXX_COMPILER=clang++ \
-      -DCMAKE_C_FLAGS="-O3 -flto" \
-      -DCMAKE_CXX_FLAGS="-O3 -flto" \
+      -DCMAKE_C_FLAGS="-flto" \
+      -DCMAKE_CXX_FLAGS="-flto" \
       -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld" \
       -DCMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld" \
       -DCMAKE_MODULE_LINKER_FLAGS="-fuse-ld=lld" \
@@ -139,6 +139,10 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Thu Oct 22 2026 LFRon <ronforever@qq.com> - 1.15.0-1
+- Follow OpenAtom-Linyaps upstream
+- Disable LLVM -O3 build
+
 * Mon Sep 14 2026 LFRon <ronforever@qq.com> - 1.15.0-0
 - Follow OpenAtom-Linyaps upstream
 
