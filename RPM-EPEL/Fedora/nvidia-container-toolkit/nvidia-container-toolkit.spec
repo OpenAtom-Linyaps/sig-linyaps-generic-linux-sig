@@ -11,7 +11,7 @@
 %global debug_package %{nil}
 
 Name:           nvidia-container-toolkit
-Version:        1.20.0
+Version:        1.20.1
 Release:        1
 Summary:        NVIDIA Container Toolkit
 License:        Apache-2.0 AND BSD-3-Clause AND GPL-3.0-or-later AND LGPL-3.0-or-later AND MIT AND GPL-2.0-only
