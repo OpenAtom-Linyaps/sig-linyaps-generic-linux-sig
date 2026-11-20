@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 Name:           linglong-box
 Version:        2.3.6
-Release:        0
+Release:        1
 Summary:        Linglong sandbox runtime.
 License:        LGPL v3
 URL:            https://github.com/OpenAtom-Linyaps/linyaps-box
@@ -45,6 +45,9 @@ cd build
 %{_bindir}/ll-box
 
 %changelog
+* Fri Nov 20 2026 LFRon <ronforever@qq.com> - 2.3.6-1
+- Follow the upstream master branch
+
 * Thu Oct 22 2026 LFRon <ronforever@qq.com> - 2.3.6-0
 - Follow the upstream master branch
 - Disable LLVM -O3 build flag
