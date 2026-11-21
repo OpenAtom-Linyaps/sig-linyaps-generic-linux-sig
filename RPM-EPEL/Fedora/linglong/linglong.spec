@@ -99,6 +99,7 @@ cd build
 %{_bindir}/llpkg
 %{_prefix}/lib/%{name}/container/*
 %{_prefix}/lib/%{name}/generate-xdg-data-dirs.sh
+%{_prefix}/lib/%{name}/generate-path.sh
 %{_prefix}/lib/sysusers.d/*.conf
 %{_prefix}/lib/tmpfiles.d/*.conf
 %{_prefix}/lib/systemd/system/*.service
