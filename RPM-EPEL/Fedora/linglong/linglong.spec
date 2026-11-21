@@ -105,7 +105,7 @@ cd build
 %{_prefix}/lib/systemd/system-preset/*.preset
 %{_prefix}/lib/systemd/system-environment-generators/*
 %{_prefix}/lib/systemd/user-environment-generators/*
-%{_prefix}/lib/linglong/*
+%{_prefix}/lib/systemd/user-generators/*
 %{_libexecdir}/%{name}/ll-package-manager
 %{_libexecdir}/%{name}/ld-cache-generator
 %{_libexecdir}/%{name}/font-cache-generator
