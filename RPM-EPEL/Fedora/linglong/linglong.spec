@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 Name:           linglong
 Version:        1.15.0
-Release:        1
+Release:        2
 Summary:        Linyaps is a secondary package manager on Linux.
 License:        LGPL v3
 URL:            https://gitee.com/LFRon/linyaps-generic-linux
-Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.15.0-1.tar.gz
+Source0:        https://gitee.com/LFRon/linyaps-generic-linux/archive/refs/tags/1.15.0-2.tar.gz
 
 # 处理Qt编译版本, RPM新发行版使用Qt6编译
 # 反之使用Qt5编译
@@ -139,6 +139,9 @@ cd build
 %{_datadir}/%{name}/builder/uab/*
 
 %changelog
+* Sat Nov 21 2026 LFRon <ronforever@qq.com> - 1.15.0-2
+- Follow OpenAtom-Linyaps upstream
+
 * Thu Oct 22 2026 LFRon <ronforever@qq.com> - 1.15.0-1
 - Follow OpenAtom-Linyaps upstream
 - Disable LLVM -O3 build
